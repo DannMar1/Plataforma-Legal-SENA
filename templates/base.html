@@ -109,7 +109,7 @@
                         - {% if request.endpoint == 'preguntas' %}activo{% endif %}: lógica Jinja que añade la clase "activo" cuando la vista actuañ corresponde a 'preguntas', resaltando visualmente la opción activa.
                         Permite al usuario identificar en qué sección del sistema se encuentra. 
                         -->
-                        <a href="/preguntas" class="enlace-menu" {% if request.endpoint == 'preguntas' %}activo{% endif %}>Preguntas Frecuentes</a>
+                        <a href="/preguntas" class="enlace-menu {% if request.endpoint == 'preguntas' %}activo{% endif %}">Preguntas Frecuentes</a>
                         
                         <!-- Enlace del menú principal hacia la sección institucional "Quiénes somos".
                             - href="/nosotros": dirige a la vista nosotros del sistema Legalis.
