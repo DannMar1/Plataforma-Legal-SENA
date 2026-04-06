@@ -1,1 +1,77 @@
-<h1>Bienvenido a la tienda de Documentos Legales</h1>
+<!-- Establece la herencia de plantillas en Jinja2, permitiendo que este archivo reutilice la estructura principal y solo redefina los bloques necesarios (por ejemplo, contenido, título o estilos adicionales). -->
+<!-- Indica que esta plantilla hereda la estructura de base.html, reutilizando su diseño general (menú, pie de página y bloques definidos) -->
+{% extends "base.html" %}
+
+
+<!-- Sobreescribe el bloque titulo_pestana de base.html para establecer el nombre específico de esta página (por ejemplo: Inicio - Legalis). -->
+<!-- Define el título que se mostrará en la pestaña del navegador, reemplazando el bloque correspondiente a la plantilla base -->
+{% block titulo_pestana %} Inicio {% endblock %}
+
+<!-- Permite inyectar reglas de estilo propias de la vista actual, manteniendo separada la presentacion general definida en base.html -->
+<!-- Inicia el bloque donde se pueden agregar estilos CSS especificos de esta pagina sin afectar la plantilla base -->
+{% block estilos_adicionales %}
+
+    <!-- Carga el archivo CSS especifico de esta vista utilizando url_for('static', ...), lo que permite que flask construya la URL adecuada hacia los archivos estaticos, garantizando compatibilidad y buena practica en la gestion de recursos -->
+    <!-- Vincula la hoja de estilos tienda.css ubicada en la carpeta static/css mediante url_for pra generar dinamicamente la ruta correcta -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tienda.css') }}">
+
+<!-- Finaliza un bloque de Jinja (block) y señala hasta donde llega el contenido que reemplaza o completamente el definido en base.html, manteniendo la correcta herencia de plantillas. -->
+<!-- Cierra el bloque definido previamente, indicando el final de la seccion personalizable dentro de la plantilla -->
+{% endblock %}
+
+<!-- Define la sección central que será reemplazada o completada por la plantilla hija, permitiendo insertar el contenido propio de la página sin alterar el menú, el pie de página ni la estructura general de base.html. -->
+<!-- Inicia el bloque principal de contenido de la página, donde se inyecta la información específica de esta vista dentro de la plantilla base -->
+{% block contenido %}
+
+    <!-- Crea un contenedor semántico que organiza el contenido inicial de la vista (título, texto, buscador, etc.), facilitando el diseño con CSS y mejorando la accesibilidad y la estructura del documento. -->
+    <!-- Define una sección llamada "binvenida" para agrupar el contenido principal de introducción de la página -->
+    <section class="bienvenida">
+
+        <!-- Define el titulo principal de la sección (nivel jerárquico H1), mejorando la estructura semántica del documento, el posicionamiento SEO y la accesibilidad para lectores de pantalla. -->
+        <!-- Encabezado principal de la página que comunica la propuesta de valor del sitio -->
+        <h1>Documentos legales con validez jurídica.</h1>
+
+        <!-- Proporciona información complementaria a título, aportando contexto al usuario y fortaleciendo el mensaje institucional dentro de la estructura semántica de la sección. -->
+        
+        <!-- Párrafo descriptivo que complementa el encabezado principal y refuerza la propuesta de valor del servicio -->
+        <p>Plantillas redactadas por abogados expertos</p>
+
+    <!-- Finaliza el contenedor semántico definido previamente, delimitando correctamente el alcance del contenido y manteniendo una estructura HTML ordenada y accesible. -->
+    <!-- Cierra la sección "bienvenida", indicando el final del bloque semántico que agrupa el contenido introductorio -->
+    </section>
+
+    <!-- Define un bloque estructural que permite alinear, espaciar y diseñar el componente de búsqueda dentro de la página, facilitando la maquetación y la experiencia de usuario. -->
+    <!-- Contenedor que agrupa los elementos del buscador (campo de entrada y botones) para su organización y estilo con CSS -->
+    <div class="contenedor-busqueda">
+
+        <!-- Crea un input de tipo texto estilizado con la clase input-busqueda, mostrando un texto guía (placeholder) que orienta al usuario sobre qué debe ingresar, mejorando la usabilidad del buscador. -->
+        <!-- Campo de entrada de texto donde el usuario escribe el término o tipo de tutela que desea buscar -->
+        <input type="text" class="input-busqueda" placeholder="Busque la tutela que requiere.">
+
+        <!-- Inserta una imágen SVG como ícono del buscador, utilizando url_for('static', ...) para generar correctamente la ruta del recurso y el atributo alt para mejorar accesibilidad y SEO. -->
+        <!-- Muestra el ícono de búsqueda (lupa) cargado desde la carpeta static mediante url_for, con texto alternativo para accesibilidad -->
+        <img src="{{ url_for('static', filename='img/tienda/lupa.svg') }}" class="icono-lupa" alt="Buscar">
+
+    <!-- Finaliza el div que organiza visual y estructuralmente el buscador dentro de la página. -->
+    <!-- Cierra el contenedor del componente de búsqueda, delimitando el bloque que agrupa el input y el ícono de la lupa -->
+    </div>
+
+    <!-- Define un contenedor semántico destinado a agrupar controles de filtrado (categorias, tipos de documento, etc.), facilitando su diseño con CSS y mejorando l aexperiencia de navegación del usuario. -->
+    <!-- Inicia la sección de filtros, dónde se ubican opciones para refinar la búsqueda de documentos legales -->
+    <section class="seccion-filtros">
+
+    <!-- Finaliza el contenedor semántico seccion-filtros, delimitando correctamente el área destinada a los controles de filtrado dentro de la estructura de la página. -->
+    <!-- Cierra la sección de filtros, indicando el final del bloque que contiene las opciones de refinamiento de búsqueda -->
+    </section>
+
+    <!-- Agrupa los elementos que representan cada documento o tutela, permitiendo su organización, maquetación y futura caga dinámica desde el backend o con JavaScript. -->
+    <!-- Contenedor principal donde se mostrará el listado dinámico de tutelas o documentos legales disponibles -->
+    <div class="listado-tutelas">
+
+    <!-- Finaliza el div que agrupa los elementos del listado, manteniendo una estructura HTML organizada y preparada para renderizado dinámico. -->
+    <!-- Cierra el contenedor del listado de tutelas, delimitando el bloque donde se muestran los documentos -->
+    </div>
+
+<!-- Indica el cierre del bloque contenido, completando la herencia de la plantilla y devolviendo el control estructural a base.html. -->
+<!-- Finaliza el bloque de contenido, cerrando la sección que reemplaza el bloque correspondiente en la plantilla base -->
+{% endblock %}
