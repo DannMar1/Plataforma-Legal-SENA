@@ -1,0 +1,309 @@
+/* ======================================================= */
+/* ESTILOS ESPECÍFICOS DE LA TIENDA LEGAL                  */
+/* ======================================================= */
+
+/* 1. Diseño de la Bienvenida (Hero) */
+
+/* Elemento: Selector de clase con apertura de bloque */
+/* Comentario Técnico: Identifica el contenedor de la sección de bienvenida (Hero) para aplicar estilos de estructura inicial */
+/* Función Técnica Corta: Establece el marco visual donde se presenta el mensaje principal de la tienda legal */
+/* DICCIONARIO: Clase de Contenedor | Es el primer elemento de impacto que ve el usuario al ingresar | Use nombres que describan claramente el propósito de la sección */
+.bienvenida {
+
+    /* Elemento: Propiedad de alineación de texto */
+    /* Comentario Técnico: Centra horizontalmente todo el contenido tipográfico y elementos en línea dentro del bloque */
+    /* Función Técnica Corta: Garantiza una composición visual simétrica y equilibrada en el mensaje de apertura */
+    /* DICCIONARIO: Alineador de Texto | Mejora la jerarquía y lectura en secciones de encabezado | Evite centrar bloques de texto muy largos para no dificultar la lectura */
+    text-align: center;
+
+    /* Elemento: Propiedad de margen exterior inferior con unidad de medida relativa (rem) */
+    /* Comentario Técnico: Genera un espacio de separación de 3rem hacia abajo respecto al siguiente componente del sistema */
+    /* Función Técnica Corta: Proporciona "aire" visual entre la bienvenida y el buscador para evitar el hacinamiento de elementos */
+    /* DICCIONARIO: Margen Externo | Es vital para que el diseño "respire" y se sienta organizado | Prefiera unidades 'rem' sobre 'px' para garantizar que el diseño sea escalable y accesible */
+    margin-bottom: 3rem;
+
+/* Elemento: Llave de cierre o delimitador final*/
+/* Comentario Técnico: Concluye la definición de reglas de estilo para el bloque de bienvenida */
+/* Función Técnica Corta: Cierra el ámbito de aplicación de este selector, permitiendo que el navegador procese la siguiente regla */
+/* DICCIONARIO: Sello de Bloque | Asegura la integridad técnica del archivo CSS | Verifique siempre que cada apertura tenga su cierre para evitar errores de renderizado*/
+}
+
+/* Elemento: Selector descendente que combina una clase (.bienvenida) y una etiqueta HTML (h1) */
+/* Comentario Técnico: Aplica reglas de estilo específicas al encabezado de primer nivel ubicado dentro del contenedor de bienvenida */
+/* Función Técnica Corta: Establece la jerarquía visual principal (título maestro) de la página de la tienda legal. */
+/* DICCIONARIO: Selector de Título | Es el elemento de texto más importante para el usuario y los buscadores | Use un solo h1 por página para mantener un SEO óptimo y una estructura clara. */
+.bienvenida h1 {
+
+    /* Elemento: Propiedad de tamaño de fuente con unidad de medida relativa rem */
+    /* Comentario Técnico: Define una escala de 2.5 unidades relativas al tamaño de fuente raíz del documento */
+    /* Función Técnica Corta: Proporciona un tamaño prominente que destaca el mensaje de apertura de forma inmediata*/
+    /* DICCIONARIO: Tamaño Relativo | Permite que el texto sea escalable y accesible para usuarios con preferencias personalizadas | Prefiera 'rem' sobre 'px' para garantizar que el diseño sea adaptable. */
+    font-size: 2.5rem;
+
+    /* Elemento: Propiedad de color de texto con valor hexadecimal */
+    /* Comentario Técnico: Aplica un tono gris casi negro (#1d1d1f) para lograr un contraste profesional sin la dureza del negro puro */
+    /* Función Técnica Corta: Define la identidad cromática del título, mejorando la legibilidad sobre fondos claros*/
+    /* DICCIONARIO: Contraste Visual | Un buen contraste es vital para la accesibilidad y reduce la fatiga visual | Verifique siempre que el color del texto resalte suficientemente sobre el fondo. */
+    color: #1d1d1f;
+
+    /* Elemento: Propiedad de margen exterior inferior con unidad rem*/
+    /* Comentario Técnico: Genera un espacio de separación de 0.5 unidades hacia el elemento que se encuentre debajo */
+    /* Función Técnica Corta: Crea una relación de proximidad equilibrada entre el título y el párrafo descriptivo */
+    /* DICCIONARIO: Margen de Relación | El espacio en blanco ayuda a separar ideas y mejorar la organización visual | Use márgenes pequeños para elementos que están lógicamente conectados. */
+    margin-bottom: 0.5rem;
+
+/* Elemento: Llave de cierre o delimitador final de bloque */
+/* Comentario Técnico: Finaliza la declaración de estilos para el elemento h1 dentro del contexto de bienvenida. */
+/* Función Técnica Corta: Cierra el ámbito del selector, impidiendo que estas reglas se apliquen a otros elementos del sistema. */
+/* DICCIONARIO: Sello de Bloque | Es indispensable para mantener la integridad técnica del archivo CSS | Una indentación correcta facilita la lectura y el mantenimiento del código a largo plazo. */
+}
+
+/* Elemento: Selector descendente que combina una clase (.bienvenida) y una etiqueta HTML (p)*/
+/* Comentario Técnico: Define las reglas de estilo para el párrafo descriptivo ubicado dentro de la sección de bienvenida*/
+/* Función Técnica Corta: Establece la apariencia del texto de soporte que complementa al título principal. */
+/* DICCIONARIO: Selector de Párrafo | Permite diferenciar el cuerpo de texto del título | Use selectores específicos para evitar cambios globales no deseados. */
+.bienvenida p {
+
+    /* Elemento: Propiedad de tamaño de fuente con unidad relativa rem */
+    /* Comentario Técnico: Ajusta el tamaño del texto a 1 unidad rem, equivalente generalmente al tamaño base del navegador (16px) */
+    /* Función Técnica Corta: Garantiza una legibilidad óptima y proporcional para la lectura de información secundaria. */
+    /* DICCIONARIO: Tamaño de Cuerpo | Es la base de la accesibilidad en lectura web | 1rem es el estándar recomendado para textos de párrafo. */
+    font-size: 1rem;
+
+    /* Elemento: Propiedad de color de texto con valor hexadecimal */
+    /* Comentario Técnico: Aplica un tono gris suave que genera un contraste de segundo nivel respecto al título */
+    /* Función Técnica Corta: Reduce la intensidad visual del párrafo para guiar la atención del usuario primero hacia el encabezado. */
+    /* DICCIONARIO: Color de Contraste | Crea una jerarquía visual mediante la saturación del color | Asegure que el gris sea lo suficientemente oscuro para cumplir con las normas de accesibilidad. */
+    color: #86868b;
+
+/* Elemento: Llave de cierre o delimitador final del bloque */
+/* Comentario Técnico: Concluye la declaración de estilos para el párrafo de la sección de bienvenida */
+/* Función Técnica Corta: Cierra el ámbito del selector, protegiendo la integridad estructural del archivo CSS. */
+/* DICCIONARIO: Cierre de Sintaxis | Evita errores que podrían anular las reglas siguientes | Mantenga el código organizado para facilitar futuras actualizaciones. */
+}
+
+/* Elemento: Selector de clase con apertura de bloque. */
+/* Comentario Técnico: Define el contenedor maestro que agrupa los elementos del buscador de la tienda legal. */
+/* Función Técnica Corta: Establece el marco estructural para organizar el campo de entrada y el icono de búsqueda. */
+/* DICCIONARIO: Nodo Maestro de Búsqueda | Permite agrupar componentes relacionados en un solo bloque lógico | Use nombres semánticos que faciliten la lectura de la estructura HTML. */
+.contenedor-busqueda {
+
+    /* Elemento: Propiedad de posicionamiento con valor relativo. */
+    /* Comentario Técnico: Crea un marco de referencia espacial para que los elementos hijos (como la lupa) se posicionen respecto a este contenedor */
+    /* Función Técnica Corta: Sirve como eje de coordenadas para que los elementos internos con posición absoluta no se "escapen" del buscador */
+    /* DICCIONARIO: Contexto de Posicionamiento | Es el ancla necesaria para el uso de 'position: absolute' en elementos hijos | Siempre declare 'relative' en el padre si los hijos requieren ubicación precisa. */
+    position: relative;
+
+    /* Elemento: Propiedad de dimensión de ancho fijo. */
+    /* Comentario Técnico: Establece una extensión horizontal fija de 500 píxeles para el componente en la versión de escritorio */
+    /* Función Técnica Corta: Controla el tamaño del buscador para mantener la proporción y el equilibrio estético del diseño */
+    /* DICCIONARIO: Ancho Definido | Evita que el campo de búsqueda se deforme o se estire demasiado en monitores grandes | En el diseño responsivo, este valor debe ajustarse mediante Media Queries */
+    width: 500px;
+
+    /* Elemento: Propiedad de margen (shorthand) con cuatro valores de dirección. */
+    /* Comentario Técnico: Aplica 0 de margen superior, centra horizontalmente el bloque (auto) y deja 40 píxeles de separación inferior */
+    /* Función Técnica Corta: Ubica el buscador exactamente en el centro del eje horizontal y genera "aire" respecto a la sección siguiente */
+    /* DICCIONARIO: Centrado por Margen | El valor 'auto' en los laterales es la técnica estándar para centrar elementos de bloque | Mantenga márgenes consistentes para preservar el ritmo visual. */
+    margin: 0 auto 40px auto;
+
+/* Elemento: Llave de cierre o delimitador final. */
+/* Comentario Técnico: Finaliza la declaración de reglas para el contenedor de búsqueda del sistema */
+/* Función Técnica Corta: Cierra el ámbito del selector, garantizando la integridad técnica de la hoja de estilos */
+/* DICCIONARIO: Delimitador de Bloque | Previene errores de sintaxis que podrían invalidar el código CSS posterior | Verifique siempre la correspondencia de llaves en su editor. */
+}
+
+/* Elemento: Selector de clase para el campo de entrada (input) */
+/* Comentario Técnico: Define los estilos visuales y de comportamiento del elemento donde el usuario escribirá sus consultas*/
+/* Función Técnica Corta: Establece la apariencia del "campo de texto" dentro del sistema de búsqueda */
+/* DICCIONARIO: Clase de Componente | Es la interfaz primaria de entrada de datos | Use nombres que indiquen la función específica del elemento para facilitar el mantenimiento. */
+.input-busqueda {
+
+    /* Elemento: Propiedad de dimensión de ancho relativo */
+    /* Comentario Técnico: Ordena al input que ocupe el 100% del ancho disponible de su contenedor padre (.contenedor-busqueda) */
+    /* Función Técnica Corta: Asegura que el buscador se estire completamente hasta los 500px definidos previamente */
+    /* DICCIONARIO: Ancho Fluido | Permite que el elemento se adapte automáticamente al tamaño del contenedor | Es fundamental para mantener la consistencia en el diseño responsivo. */
+    width: 100%;
+
+    /* Elemento: Propiedad de dimensión de altura fija */
+    /* Comentario Técnico: Establece una altura vertical constante de 48 píxeles */
+    /* Función Técnica Corta: Define el "grosor" visual de la barra para que sea fácil de ver y tocar */
+    /* DICCIONARIO: Altura Controlada | Proporciona un área de interacción cómoda para el usuario | 48px es un estándar de accesibilidad para evitar clics imprecisos. */
+    height: 48px;
+
+    /* Elemento: Propiedad de espaciado interno (padding) a la izquierda */
+    /* Comentario Técnico: Genera un espacio de 20 píxeles entre el borde izquierdo del input y el inicio del texto */
+    /* Función Técnica Corta: Evita que el texto escrito por el usuario "choque" contra el borde del componente */
+    /* DICCIONARIO: Sangría de Texto | Mejora drásticamente la legibilidad y estética del campo | Siempre deje un margen interno para que la lectura no se sienta sofocada. */
+    padding-left: 20px;
+
+    /* Elemento: Propiedad de espaciado interno (padding) a la derecha */
+    /* Comentario Técnico: Reserva 50 píxeles de espacio libre en el extremo derecho del input */
+    /* Función Técnica Corta: Crea el lugar necesario para que el ícono de la lupa no se encime sobre el texto escrito */
+    /* DICCIONARIO: Espacio de Reserva | Es vital cuando se usan íconos posicionados de forma absoluta dentro de un campo | Calcule este espacio según el tamaño del ícono que planea insertar. */
+    padding-right: 50px;
+
+    /* Elemento: Propiedad de borde (shorthand) con estilo, grosor y color */
+    /* Comentario Técnico: Aplica una línea sólida de 1 pixel en color gris claro (#E5E5E5) alrededor del componente */
+    /* Función Técnica Corta: Delimita físicamente el área del buscador para que resalte sobre el fondo de la página */
+    /* DICCIONARIO: Divisor de Contorno | Define la forma y límites del elemento en la interfaz | Use colores suaves para bordes para mantener un diseño limpio y moderno. */
+    border: 1px solid #E5E5E5;
+
+    /* Elemento: Propiedad de curvatura de esquinas */
+    /* Comentario Técnico: Redondea las esquinas del borde con un radio de 8 píxeles */
+    /* Función Técnica Corta: Suaviza la estética del componente, dándole un acabado moderno y menos agresivo */
+    /* DICCIONARIO: Radio de Borde | Cambia la percepción psicológica del diseño hacia algo más amigable | Mantenga este valor consistente en todos los botones e inputs del sitio. */
+    border-radius: 8px;
+
+    /* Elemento: Propiedad de tamaño de fuente con unidad relativa */
+    /* Comentario Técnico: Establece el tamaño de la letra escrita en 1.1 unidades rem */
+    /* Función Técnica Corta: Asegura que el texto que ingresa el usuario sea lo suficientemente grande para ser legible */
+    /* DICCIONARIO: Escala Tipográfica | Facilita la visualización del contenido ingresado | Un tamaño ligeramente mayor al base (1rem) mejora la experiencia en buscadores. */
+    font-size: 1.1rem;
+
+    /* Elemento: Propiedad de estilo de contorno de enfoque */
+    /* Comentario Técnico: Elimina el borde azul o resaltado que el navegador coloca por defecto al hacer clic en el input */
+    /* Función Técnica Corta: Permite personalizar el estilo de "foco" sin interferencias visuales automáticas del sistema */
+    /* DICCIONARIO: Anulación de Contorno | Limpia el diseño de efectos predeterminados del navegador | Si usa 'none', asegúrese de definir un estado ':focus' propio para accesibilidad. */
+    outline: none;
+
+    /* Elemento: Propiedad de animación de estados con duración y curva de velocidad */
+    /* Comentario Técnico: Configura una transición de 0.3 segundos para todas las propiedades cuando cambien */
+    /* Función Técnica Corta: Suaviza cambios como el color del borde o sombras cuando el usuario interactúa con el campo */
+    /* DICCIONARIO: Suavizado de Interacción | Evita cambios bruscos que distraen al usuario | Use 'ease' para que la animación se sienta natural (comienza y termina despacio). */
+    transition: all 0.3s ease;
+
+/* Elemento: Llave de cierre de bloque */
+/* Comentario Técnico: Finaliza la declaración de reglas para la clase .input-busqueda */
+/* Función Técnica Corta: Cierra el ámbito de estilos para este componente específico */
+/* DICCIONARIO: Cierre Estructural | Garantiza que el código siguiente se procese correctamente | Siempre revise que sus bloques estén bien cerrados para evitar fallos globales. */
+}
+
+/* Elemento: Selector de clase con pseudo-clase de estado (:focus) y apertura de bloque. */
+/* Comentario Técnico: Define los cambios de estilo que se activan cuando el usuario hace clic o selecciona el campo de entrada mediante el teclado. */
+/* Función Técnica Corta: Actúa como un disparador de "estado activo", confirmando al usuario que el sistema está listo para recibir datos. */
+/* DICCIONARIO: Selector de Estado | Proporciona retroalimentación visual (feedback) indispensable | Nunca deje un campo de entrada sin un estado de enfoque claramente definido. */
+.input-busqueda:focus {
+
+    /* Elemento: Propiedad de color de borde con valor hexadecimal */
+    /* Comentario Técnico: Cambia el color del contorno a un azul corporativo (#0066cc) para resaltar el elemento activo */
+    /* Función Técnica Corta: Diferencia visualmente el campo que tiene el control de la interfaz respecto a los demás elementos. */
+    /* DICCIONARIO: Color de Énfasis | Guía la atención del usuario hacia la acción principal | Use colores que contrasten bien con el fondo para cumplir con normativas de accesibilidad. */
+    border-color: #0066cc;
+
+    /* Elemento: Propiedad de sombra de caja (box-shadow) con valores de desplazamiento, desenfoque y color RGBA */
+    /* Comentario Técnico: Aplica una sombra sutil de 8px de desenfoque con un 10% de opacidad para dar profundidad al componente */
+    /* Función Técnica Corta: Crea un efecto de "elevación" (Z-index visual) que hace que el buscador parezca estar por encima del resto del contenido. */
+    /* DICCIONARIO: Efecto de Elevación | Mejora la estética moderna (Material Design) y el enfoque visual | Use sombras con opacidad baja (0.1 o 0.2) para mantener la elegancia. */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+/* Elemento: Llave de cierre o delimitador final del bloque de estado */
+/* Comentario Técnico: Concluye la declaración de reglas para el estado interactivo del buscador */
+/* Función Técnica Corta: Cierra el ámbito de las instrucciones, asegurando que estos estilos solo funcionen durante el enfoque. */
+/* DICCIONARIO: Sello de Interacción | Evita que los estilos de "foco" se apliquen permanentemente al elemento | Mantenga el orden de las llaves para facilitar la depuración del código. */
+}
+
+/* Elemento: Selector de clase con apertura de bloque.  */
+/* Comentario Técnico: Identifica el elemento visual de la lupa para aplicarle reglas de ubicación espacial.  */
+/* Función Técnica Corta: Define la apariencia y posición del ícono que indica la funcionalidad de búsqueda.  */
+/* DICCIONARIO: Ícono de Interfaz | Es la señal visual universal para buscar | Use formatos vectoriales (SVG) para que no pierda calidad al escalar. */
+.icono-lupa {
+
+    /* Elemento: Propiedad de posicionamiento absoluto.  */
+    /* Comentario Técnico: Extrae el ícono del flujo normal para posicionarlo respecto a su contenedor padre (.contenedor-busqueda).  */
+    /* Función Técnica Corta: Permite "flotar" el ícono dentro del buscador sin desplazar el texto que escribe el usuario. */
+    /* DICCIONARIO: Posicionamiento Quirúrgico | Es vital para superponer elementos UI | Requiere que el padre tenga 'position: relative' para no "escapar" de la caja. */
+    position: absolute;
+
+    /* Elemento: Propiedad de desplazamiento horizontal derecho.  */
+    /* Comentario Técnico: Fija la distancia del ícono a 15 píxeles desde el borde derecho del contenedor.  */
+    /* Función Técnica Corta: Alinea el gráfico al final del campo de entrada para mantener la convención de diseño estándar.  */
+    /* DICCIONARIO: Offset Lateral | Mantiene el ícono lejos de la orilla para evitar el hacinamiento visual | Debe ser menor al 'padding-right' del input para que el texto no lo tape. */
+    right: 15px;
+
+    /* Elemento: Propiedad de desplazamiento vertical superior.  */
+    /* Comentario Técnico: Ubica el borde superior del ícono exactamente en la mitad (50%) de la altura del padre.  */
+    /* Función Técnica Corta: Es el primer paso para lograr un centrado vertical perfecto del elemento gráfico.  */
+    /* DICCIONARIO: Anclaje Central | Coloca el inicio del elemento en el ecuador del contenedor | Por sí solo no centra el elemento; necesita el apoyo de 'transform'. */
+    top: 50%;
+
+    /* Elemento: Función de transformación para traslación en el eje Y.  */
+    /* Comentario Técnico: Desplaza el elemento hacia arriba exactamente la mitad de su propia altura (-50%).  */
+    /* Función Técnica Corta: Corrige el desfase del 'top: 50%', logrando que el ícono quede centrado verticalmente sin importar su tamaño.  */
+    /* DICCIONARIO: Centrado Dinámico | Es la técnica pro para evitar márgenes fijos que se rompen con diferentes alturas | Funciona automáticamente si decides cambiar el tamaño del ícono. */
+    transform: translateY(-50%);
+
+    /* Elemento: Propiedad de dimensión de ancho fijo.  */
+    /* Comentario Técnico: Define una medida horizontal de 20 píxeles para el gráfico.  */
+    /* Función Técnica Corta: Controla la escala de la lupa para que sea proporcional y legible dentro de la barra de 48px de alto.  */
+    /* DICCIONARIO: Control de Escala | Garantiza consistencia visual en la UI | Un tamaño de 20px a 24px es el estándar de oro para íconos de barra de herramientas. */
+    width: 20px;
+
+    /* Elemento: Propiedad de dimensión de altura fija. */
+    /* Comentario Técnico: Establece una medida vertical de 20 píxeles para el gráfico.  */
+    /* Función Técnica Corta: Asegura que el ícono mantenga una proporción cuadrada (1:1) para evitar distorsiones.  */
+    /* DICCIONARIO: Simetría de Caja | Vital para que los íconos no se vean estirados o aplastados | Mantenga siempre el ancho y alto iguales en elementos iconográficos. */
+    height: 20px;
+
+    /* Elemento: Propiedad de opacidad de canal alfa. */
+    /* Comentario Técnico: Reduce la intensidad visual del ícono al 50% de su capacidad total.  */
+    /* Función Técnica Corta: Suaviza el protagonismo del ícono para que sea una guía sutil y no distraiga la lectura del usuario.  */
+    /* DICCIONARIO: Jerarquía Visual | Ayuda a integrar elementos decorativos sin saturar el diseño | Puede aumentarse al 100% en un estado ':hover' para indicar interactividad. */
+    opacity: 0.5;
+
+/* Elemento: Llave de cierre o delimitador final.  */
+/* Comentario Técnico: Finaliza la declaración de reglas de posicionamiento para la lupa.  */
+/* Función Técnica Corta: Cierra el bloque de instrucciones, manteniendo la integridad del archivo CSS de la tienda.  */
+/* DICCIONARIO: Sello de Bloque | Previene errores de sintaxis que inhabilitarían el código posterior | Siempre verifique que cada llave abierta tenga su correspondiente cierre. */
+}
+
+/* ======================================================= */
+/* 3. ADAPTACIÓN PARA MÓVIL (MEDIA QUERY)                  */
+/* ======================================================= */
+
+/* Elemento: Regla de At-rule (@media) con condición de ancho máximo. */
+/* Comentario Técnico: Establece un punto de quiebre (breakpoint) para que los estilos dentro de las llaves solo se apliquen en pantallas de 768px de ancho o menos */
+/* Función Técnica Corta: Activa el diseño responsivo para adaptar la interfaz a tabletas y dispositivos móviles */
+/* DICCIONARIO: Punto de Quiebre | Permite que la arquitectura visual sea flexible y adaptable | Use 768px como estándar para separar la experiencia de escritorio de la móvil. */
+@media (max-width: 768px) {
+
+    /* Elemento: Selector descendente dentro de una consulta de medios. */
+    /* Comentario Técnico: Selecciona el encabezado principal dentro de la sección de bienvenida para modificar su comportamiento en móviles */
+    /* Función Técnica Corta: Inicia el ajuste de la jerarquía tipográfica para optimizar títulos en pantallas pequeñas. */
+    /* DICCIONARIO: Selector Responsivo | Permite refinar componentes específicos sin alterar el diseño global | Agrupe siempre estos selectores dentro de la media query correspondiente. */
+    .bienvenida h1 {
+
+        /* Elemento: Propiedad de tamaño de fuente con unidad relativa rem. */
+        /* Comentario Técnico: Reduce el tamaño del título de 2.5rem a 2rem para garantizar que el texto quepa cómodamente en el ancho de la pantalla */
+        /* Función Técnica Corta: Adapta el impacto visual del mensaje principal, evitando desbordamientos de texto en celulares */
+        /* DICCIONARIO: Reajuste de Escala | Previene que títulos largos se corten o fuercen un desplazamiento horizontal indeseado | La legibilidad en móviles es la prioridad número uno en UX. */
+        font-size: 2rem; /* Reduce el título para que quepa en pantalla */
+
+    /* Elemento: Llave de cierre de bloque de selector. */
+    /* Comentario Técnico: Finaliza la declaración de estilos específicos para el título h1 dentro del entorno móvil */
+    /* Función Técnica Corta: Cierra el ámbito de la regla responsiva para este elemento, permitiendo continuar con otros ajustes. */
+    /* DICCIONARIO: Delimitador de Bloque | Mantiene la integridad lógica y estructural del archivo CSS | Verifique siempre la paridad de llaves para evitar errores de renderizado en cascada. */
+    }
+
+    /* Elemento: Selector de clase dentro de una consulta de medios (Media Query) */
+    /* Comentario Técnico: Redefine el comportamiento del contenedor de búsqueda para que sea fluido en dispositivos móviles. */
+    /* Función Técnica Corta: Cambia el ancho estático por uno porcentual para garantizar la adaptabilidad en pantallas estrechas. */
+    /* DICCIONARIO: Contenedor Responsivo | Evita el desbordamiento horizontal y el desplazamiento lateral en celulares | Use porcentajes en móviles para maximizar el área de interacción. */
+    .contenedor-busqueda {
+
+        /* Elemento: Propiedad de dimensión de ancho relativo (porcentual). */
+        /* Comentario Técnico: Anula el ancho fijo de 500px definido para escritorio y expande el componente al 100% del espacio disponible. */
+        /* Función Técnica Corta: Permite que el buscador se "estire" o "encoja" dinámicamente según el tamaño de la pantalla del celular. */
+        /* DICCIONARIO: Ancho Fluido | Es el pilar del diseño líquido para que el buscador sea usable en cualquier resolución | Evite anchos fijos en píxeles dentro de las media queries para mantener la flexibilidad. */
+        width: 100%; /* El buscador deja de ser fijo (500px) y se adapta al celular */
+
+    /* Elemento: Llave de cierre del selector */
+    /* Comentario Técnico: Finaliza las instrucciones específicas para el contenedor de búsqueda en el modo móvil */
+    /* Función Técnica Corta: Delimita el fin del bloque de estilos responsivos para este componente específico */
+    /* DICCIONARIO: Delimitador de Bloque | Garantiza que las reglas no se mezclen con el siguiente selector | Mantenga la indentación para leer fácilmente la jerarquía de llaves */
+    }
+
+/* Elemento: Llave de cierre de la regla de At-rule (@media) */
+/* Comentario Técnico: Termina el ámbito de la consulta de medios de 768px, cerrando el bloque de diseño responsivo de la tienda */
+/* Función Técnica Corta: Actúa como el cierre definitivo del sistema de adaptación móvil para este archivo  */
+/* DICCIONARIO: Cierre de At-rule | Es la pieza final que encapsula toda la lógica de diseño móvil | Verifique siempre que esta llave exista para no invalidar el resto de la cascada de estilos */
+}
