@@ -1,0 +1,188 @@
+
+<!-- Elemento: Etiqueta de herencia de plantilla en Jinja2. -->
+<!-- Comentario Técnico: Indica que esta plantilla reutiliza la estructura definida en un archivo padre, importando automáticamente su esqueleto HTML. -->
+<!-- Función Técnica: Establece un modelo de composición jerárquica donde esta vista solo define el contenido variable mientras la plantilla base mantiene encabezado, pie de página y recursos comunes. -->
+<!-- Diccionario: Herencia de Plantillas | Permite reutilizar una estructura HTML común evitando duplicación de código | Mantenga una única plantilla base para consistencia visual y mantenimiento eficiente. -->
+{% extends "base.html" %}
+
+<!-- Elemento: Bloque de Jinja2 que define el título de la pestaña del navegador. -->
+<!-- Comentario Técnico: Este texto reemplaza el título configurado en la plantilla base (base.html). -->
+<!-- Función Técnica : Hace que cada página tenga su propio nombre en la pestaña del navegador sin cambiar toda la estructura del sitio. -->
+<!-- Diccionario: Título de Pestaña | Texto que aparece arriba en el navegador | Debe ser corto y describir la página. -->
+{% block titulo_pestana %} Preguntas Frecuentes {% endblock %}
+
+<!-- Elemento: Bloque de contenido de Jinja2. -->
+<!-- Comentario Técnico: Indica el inicio de una sección que reemplazará el bloque con el mismo nombre definido en base.html. -->
+<!-- Función Técnica: Marca el espacio donde se escribirá el contenido principal de esta página (lo que el usuario verá en el cuerpo del sitio). -->
+<!-- Diccionario: Bloque de Contenido | Espacio reservado en una plantilla para insertar información propia de cada página | Debe tener el mismo nombre que el bloque definido en la plantilla base. -->
+{% block contenido %}
+
+    <!-- Elemento: Etiqueta semántica HTML <section> con clase CSS. -->
+    <!-- Comentario Técnico: Crea un contenedor que agrupa todo el contenido relacionado con la sección de preguntas frecuentes. -->
+    <!-- Función Técnica : Permite organizar la página por partes y aplicar estilos específicos desde CSS usando la clase "seccion-faq". -->
+    <!-- Diccionario: Sección | Bloque estructural que agrupa contenido relacionado | Úselo para dividir la página en áreas claras y fáciles de diseñar. -->
+    <section class="seccion-faq">
+
+        <!-- Elemento: Encabezado principal HTML <h1>. -->
+        <!-- Comentario Técnico: Muestra el título principal de la página para identificar el tema del contenido. -->
+        <!-- Función Técnica : Indica al navegador y a los buscadores cuál es el tema más importante de la página. -->
+        <!-- Diccionario: Encabezado Principal | Título más importante del documento | Solo debe existir uno por página. -->
+        <h1>Preguntas Frecuentes sobre la Acción de Tutela</h1>
+
+        <!-- Elemento: Etiqueta contenedora HTML <div> con clase CSS. -->
+        <!-- Comentario Técnico: Crea un bloque destinado a alojar la imagen representativa de la sección de preguntas frecuentes. -->
+        <!-- Función Técnica : Permite posicionar y dar estilo a la imagen desde CSS sin afectar otros elementos de la página. -->
+        <!-- Diccionario: Contenedor | Caja usada para organizar elementos dentro del diseño | Se utiliza para aplicar estilos o ubicar contenido en pantalla. -->
+        <div class="contenedor-imagen-faq">
+
+            <!-- Elemento: Etiqueta de imagen HTML <img> con ruta dinámica de Flask/Jinja2. -->
+            <!-- Comentario Técnico: Carga una imagen desde la carpeta static del proyecto usando la función url_for para generar la ruta correcta automáticamente. -->
+            <!-- Función Técnica: Garantiza que la imagen siempre se encuentre sin importar dónde esté alojada la aplicación (evita rutas rotas). -->
+            <!-- Diccionario: url_for | Función de Flask que construye rutas seguras a archivos o páginas | Siempre úsela en lugar de escribir la ruta manualmente. -->
+            <img src="{{ url_for('static', filename='img/preguntas/preguntas.svg') }}" alt="Ilustración preguntas frecuentes" >
+            <!-- Elemento: Atributo alt de la etiqueta <img>. -->
+            <!-- Comentario Técnico: Define un texto descriptivo que se muestra si la imagen no carga o para lectores de pantalla. -->
+            <!-- Función Técnica : Mejora la accesibilidad y permite que buscadores entiendan el contenido de la imagen. -->
+            <!-- Diccionario: Texto Alternativo (alt) | Descripción escrita de una imagen | Debe explicar brevemente qué muestra la imagen. -->
+
+            <!-- Elemento: Etiqueta de cierre </div>. -->
+            <!-- Comentario Técnico: Finaliza el contenedor que agrupaba la imagen de la sección de preguntas frecuentes. -->
+            <!-- Función Técnica : Indica al navegador dónde termina ese bloque para no mezclar sus estilos con otros elementos. --> <!-- Diccionario: Cierre de Contenedor | Marca el final de una caja <div> | Todo elemento abierto debe cerrarse para evitar errores de diseño. -->
+        </div>
+
+        <!-- Elemento: Etiqueta interactiva HTML <details>. -->
+        <!-- Comentario Técnico: Crea un bloque desplegable que el usuario puede abrir o cerrar haciendo clic. -->
+        <!-- Función Técnica : Permite mostrar información solo cuando el usuario la necesita, evitando textos largos en pantalla. -->
+        <!-- Diccionario: Desplegable | Contenedor que se expande al hacer clic | Ideal para preguntas frecuentes (FAQ). -->
+        <details>
+
+            <!-- Elemento: Etiqueta <summary> dentro de <details>. -->
+            <!-- Comentario Técnico: Define el texto visible que el usuario puede presionar para abrir o cerrar el contenido desplegable. -->
+            <!-- Función Técnica : Actúa como el título de la pregunta dentro del acordeón de preguntas frecuentes. -->
+            <!-- Diccionario: Titulo Desplegable | Texto clickeable que muestra u oculta información | Debe ser corto y claro para el usuario. -->
+            <summary><strong>1. ¿Qué es una acción de tutela?</strong></summary>
+
+            <!-- Elemento: Párrafo HTML <p>. -->
+            <!-- Comentario Técnico: Contiene el texto explicativo que se mostrará al abrir la pregunta frecuente. -->
+            <!-- Función Técnica : Presenta la respuesta de forma clara y separada del título para facilitar la lectura. -->
+            <!-- Diccionario: Párrafo | Bloque de texto informativo | Debe redactarse en lenguaje sencillo para el usuario. -->
+            <p><strong>Es un mecanismo judicial rápido que permite a cualquier persona solicitar ante un juez la protección inmediata de sus derechos fundamentales cuando estos estén siendo vulnerados o amenazados por una autoridad o, en algunos casos, por un particular.</strong></p>
+
+            <!-- Elemento: Etiqueta de cierre </details>. -->
+            <!-- Comentario Técnico: Finaliza el bloque desplegable de la pregunta frecuente. -->
+            <!-- Función Técnica : Hace que el navegador entienda dónde termina la respuesta asociada a esa pregunta. -->
+            <!-- Diccionario: Cierre de Desplegable | Marca el final del contenido oculto/visible | Siempre debe existir después de <details>. -->
+        </details>
+
+        <!-- Elemento: Etiqueta interactiva HTML <details>. -->
+        <!-- Comentario Técnico: Crea un nuevo bloque desplegable independiente para otra pregunta frecuente. -->
+        <!-- Función Técnica : Permite organizar cada pregunta con su propia respuesta sin mezclar la información. -->
+        <!-- Diccionario: Desplegable | Contenedor que se abre y se cierra al hacer clic | Cada pregunta FAQ debe tener su propio <details>. -->
+        <details>
+
+            <!-- Elemento: Etiqueta <summary> dentro de <details>. -->
+            <!-- Comentario Técnico: Muestra la segunda pregunta que el usuario podrá presionar para ver la respuesta. -->
+            <!-- Función Técnica : Identifica el tema del contenido oculto que se desplegará al hacer clic. -->
+            <!-- Diccionario: Titulo Desplegable | Texto clickeable que abre o cierra la información | Debe formularse como pregunta clara. -->
+            <summary><strong>2. ¿Quiénes pueden presentar una acción de tutela?</strong></summary>
+
+            <!-- Elemento: Párrafo HTML <p>. -->
+            <!-- Comentario Técnico: Contiene la respuesta breve a la pregunta mostrada en el desplegable. -->
+            <!-- Función Técnica : Informa al usuario de manera directa quién puede usar este mecanismo judicial. -->
+            <!-- Diccionario: Respuesta | Texto que explica la pregunta realizada | Debe ser claro y fácil de entender. -->
+            <p><strong>Puede presentarla cualquier persona, sin necesidad de abogado.</strong></p>
+
+            <!-- Elemento: Párrafo HTML <p>. -->
+            <!-- Comentario Técnico: Amplía la respuesta indicando otras personas que pueden presentar la solicitud en nombre del afectado. -->
+            <!-- Función Técnica : Aclara que no solo el titular del derecho puede actuar, sino también terceros autorizados o que lo representen. -->
+            <!-- Diccionario: Representación | Actuar en nombre de otra persona | Se usa cuando el afectado no puede presentar la solicitud directamente. -->
+            <p><strong>También puede hacerlo un familiar, representante, defensor del pueblo, personero municipal o cualquier tercero que actúe en nombre del afectado cuando este no pueda hacerlo por sí mismo.</strong></p>
+
+            <!-- Elemento: Etiqueta de cierre </details>. --> <!-- Comentario Técnico: Finaliza el segundo bloque desplegable correspondiente a la pregunta número 2. --> <!-- Función Técnica : Separa esta pregunta de la siguiente para mantener el orden y la estructura correcta del código. --> <!-- Diccionario: Cierre de Desplegable | Indica el final del contenido asociado a una pregunta | Evita errores de visualización si se omite. -->
+        </details>
+
+        <!-- Elemento: Etiqueta interactiva HTML <details>. -->
+        <!-- Comentario Técnico: Inicia un nuevo bloque desplegable para otra pregunta frecuente. -->
+        <!-- Función Técnica : Permite añadir más preguntas manteniendo la misma estructura organizada. -->
+        <!-- Diccionario: Desplegable | Contenedor que muestra u oculta información al hacer clic | Cada pregunta debe abrir su propio bloque. -->
+        <details>
+
+            <!-- Elemento: Etiqueta <summary> dentro de <details>. -->
+            <!-- Comentario Técnico: Muestra la tercera pregunta que el usuario podrá presionar para ver la respuesta. -->
+            <!-- Función Técnica : Identifica el tema del contenido oculto que se desplegará al hacer clic. -->
+            <!-- Diccionario: Titulo Desplegable | Texto clickeable que abre la respuesta | Debe ser una pregunta clara y concreta. -->
+            <summary><strong>3. ¿Cuándo presentar una acción de tutela?</strong></summary>
+
+            <!-- Elemento: Párrafo HTML <p>. -->
+            <!-- Comentario Técnico: Introduce una explicación previa a una lista de situaciones. -->
+            <!-- Función Técnica : Prepara al usuario para entender los casos en los que aplica la acción. -->
+            <!-- Diccionario: Texto Introductorio | Frase que anuncia información que viene a continuación | Sirve para contextualizar listas o ejemplos. -->
+            <p><strong>Debe presentarse cuando:</strong></p>
+
+            <!-- Elemento: Lista no ordenada HTML <ul>. -->
+            <!-- Comentario Técnico: Inicia un listado de elementos sin numeración automática. -->
+            <!-- Función Técnica : Permite mostrar varios casos o situaciones de forma organizada y fácil de leer. -->
+            <!-- Diccionario: Lista | Conjunto de items relacionados | Se usa para presentar información en forma ordenada visualmente. -->
+            <ul>
+
+                <!-- Elemento: Ítem de lista HTML <li>. -->
+                <!-- Comentario Técnico: Muestra el primer caso en el que procede presentar la acción de tutela. -->
+                <!-- Función Técnica : Permite enumerar claramente cada situación dentro de la lista. -->
+                <!-- Diccionario: Ítem | Elemento individual dentro de una lista | Cada idea debe ir en un <li> separado. -->
+                <li><strong>Se esté vulnerando o amenazando un derecho fundamental.</strong></li>
+
+                <!-- Elemento: Ítem de lista HTML <li>. -->
+                <!-- Comentario Técnico: Presenta otro caso en el que procede la acción de tutela. -->
+                <!-- Función Técnica : Continúa la enumeración de situaciones dentro de la lista. -->
+                <!-- Diccionario: Ítem | Elemento individual dentro de una lista | Mantiene separadas las ideas para mejor comprensión. -->
+                <li><strong>No exista otro medio judicial eficaz para protegerlo, o</strong></li>
+
+                <!-- Elemento: Ítem de lista HTML <li>. -->
+                <!-- Comentario Técnico: Presenta el último caso en el que procede la acción de tutela. -->
+                <!-- Función Técnica : Completa la lista de situaciones para que el usuario identifique cuándo puede usar este mecanismo. -->
+                <!-- Diccionario: Perjuicio Irremediable | Daño grave que debe evitarse de inmediato | Permite usar la tutela de forma urgente. -->
+                <li><strong>El daño sea urgente y requiera protección inmediata (perjuicio irremediable).</strong></li>
+
+                <!-- Elemento: Etiqueta de cierre </ul>. -->
+                <!-- Comentario Técnico: Finaliza la lista de situaciones en las que procede la acción de tutela. -->
+                <!-- Función Técnica : Indica al navegador dónde termina el conjunto de ítems para mantener la estructura ordenada. -->
+                <!-- Diccionario: Cierre de Lista | Marca el final de una lista | Siempre debe colocarse después del último <li>. -->
+            </ul>
+
+        <!-- Elemento: Etiqueta de cierre </details>. -->
+        <!-- Comentario Técnico: Finaliza el bloque desplegable correspondiente a la pregunta número 3. -->
+        <!-- Función Técnica : Cierra correctamente la estructura para evitar que el siguiente contenido quede dentro del mismo desplegable. -->
+        <!-- Diccionario: Cierre de Desplegable | Indica el final del contenido asociado a una pregunta | Es obligatorio cerrar cada <details> que se
+        abre. -->
+        </details>
+
+        <details>
+            <summary><strong>4. ¿Qué requisitos debe cumplir una acción de tutela?</strong></summary>
+            <p><strong>Debe contener:</strong></p>
+            <ul>
+                <li><strong>Identificación del solicitante.</strong></li>
+                <li><strong>Identificación de la entidad o persona demandada.</strong></li>
+                <li><strong>Descripción clara de los hechos.</strong></li>
+                <li><strong>Derecho fundamental vulnerado.</strong></li>
+                <li><strong>Lo que se solicita al juez (pretensión).</strong></li>
+                <li><strong>Pruebas, si se tienen.</strong></li>
+            </ul>
+            <p><strong>No requiere formalidades estrictas ni lenguaje jurídico complejo.</strong></p>
+        </details>
+
+        <details>
+            <summary><strong>5. ¿Cuánto tiempo tiene un juez para fallar una acción de tutela?</strong></summary>
+            <p><strong>El juez debe decidir en máximo 10 días hábiles desde la presentación de la tutela.</strong></p>
+        </details>
+
+        <!-- Elemento: Etiqueta de cierre </section>. -->
+        <!-- Comentario Técnico: Finaliza la sección que agrupaba todo el contenido de preguntas frecuentes. -->
+        <!-- Función Técnica : Indica al navegador que aquí termina esta parte de la página, separándola de otras secciones. -->
+        <!-- Diccionario: Cierre de Sección | Marca el final de un bloque temático del documento | Mantiene el orden y la correcta estructura del HTML. -->
+    </section>
+
+<!-- Elemento: Etiqueta de cierre de bloque en Jinja2. -->
+<!-- Comentario Técnico: Finaliza el bloque llamado "contenido" que fue abierto anteriormente -->
+<!-- Función Técnica : Indica dónde termina el contenido propio de esta página dentro de la plantilla base. -->
+<!-- Diccionario: endblock | Instrucción que cierra un bloque en Jinja2 | Todo bloque abierto debe cerrarse para evitar errores en la plantilla. -->
+{% endblock %}

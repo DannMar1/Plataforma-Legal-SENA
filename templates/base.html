@@ -1,7 +1,7 @@
-<!--Declara el documento HTML5 para que el navegador use el modo estándar -->
+<!-- Declara el documento como HTML5 para que el navegador use el modo estándar -->
 <!DOCTYPE html>
 <!--
-    ===============================================================
+    =====================================================
     ARCHIVO: base.html
     PROYECTO: Legalis
     TIPO: Plantilla base (Layout Maestro)
@@ -14,168 +14,173 @@
     - Pie de página
 
     Usa Jinja2 junto con Flask para que otras páginas
-    hereden esta estctura sin repetir código.
+    hereden esta estructura sin repetir código.
 
     En términos simples: es el "esqueleto" del sistema.
-    ===============================================================
+    =====================================================
 -->
 <!-- Etiqueta raíz del documento HTML. Define el idioma principal del contenido (español). -->
 <html lang="es">
 
-    <!-- Cabecera del cocumento: contiene metadatos, título, estilos y configurción general de la página -->
+    <!-- Cabecera del documento: contiene metadatos, titulo, estilos y configuración general de la página -->
     <head>
 
-        <!--==================== CONFIGURACIÓN DEL DOCUMENTO ====================-->
+        <!-- ================ CONFIGURACIÓN DEL DOCUMENTO ================ -->
 
-        <!--Define la codificación de caracteres. Permite usar tildes, ñ y simbolos sin errores -->
+        <!-- Define la codificación de caracteres. Permite usar tildes, ñ y simbolos sin errores.-->
         <meta charset="UTF-8">
 
-        <!--Configura la visualización responsive: adapta el ancho al dispositivo y evita el zoom inicial-->
+        <!-- Configura la visualización responsive: adapta el ancho al dispositivo y evita zoom inicial -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!-- Define el favicon del sistema Legalis
-            - rel="icon": indica que es el ícono del sitio.
-            - href: usa url_for de Flask para apuntar al logo ubicado en /static/img/logo/logo.svg, garantizando una ruta correcta en cualquier entorno. 
+        <!-- Define el favicon del sistema Legalis.
+            - rel="icon": indica que es el icono del sitio.
+            - href: usa url_for de Flask para apuntar al logo ubicado en /static/img/logo/logo.svg, garantizando una ruta correcta en cualquier entorno.
         -->
-        <link rel="icon" type="image/svg+xml" href="{{url_for('static', filename='img/logo/logo.svg') }}">
-        
-        <!-- Título dinámico de la pestaña. Usa un bloque Jinja para que cada página defina su nombre manteniendo la marca Legalis -->
+        <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='img/logo/logo.svg') }}">
+
+        <!-- Titulo dinámico de la pestaña. Usa un bloque Jinja para que cada página defina su nombre manteniendo la marca Legalis -->
         <title>{% block titulo_pestana %} Base {% endblock %} - Legalis</title>
 
         <!-- Vincula la hoja de estilos principal usando url_for de Flask para generar la ruta correcta al archivo estático -->
-        <link rel="stylesheet" href="{{url_for('static', filename='css/base.css') }}">
-        
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+
         <!-- Bloque opcional para inyectar estilos CSS adicionales desde las plantillas hijas sin alterar la estructura de la plantilla base -->
 
         {% block estilos_adicionales %}{% endblock %}
 
-        <!-- Cierre de la cabecera  del documento. A partir de aquí inicia el contenido visible del sitio -->
-        </head>
+        <!-- Cierre de la cabecera del documento. A partir de aquí inicia el contenido visible del sitio -->
+    </head>
 
-        <!--Cuerpo del documento: contiene todo el contenido visible e interactivo del sistema Legalis-->
-        <body>
+    <!-- Cuerpo del documento: contiene todo el contenido visible e interactivo del sistema Legalis -->
+    <body>
 
-            <!-- Encabezado principal del sitio. Contiene logo, navegación y elementos superiores del sistema Legalis -->
-            <header class="encabezado-principal">
-                
-                <!-- Contenido estructural de la zona de navegación. Agrupa logo, menú y accesos del encabezado -->
-                <div class="contenedor-navegacion">
+        <!-- Encabezado principal del sitio. Contiene logo, navegación y elementos superiores del sistema Legalis -->
+        <header class="encabezado-principal">
 
-                    <!--Bloque de identidad visual del sitio. Contiene el logo y nombre del sistema Legalis -->
-                    <div class="bloque-logo">
+            <!-- Contenedor estructural de la zona de navegación. Agrupa logo, menú y accesos del encabezado -->
+            <div class="contenedor-navegacion">
 
-                        <!-- Etiqueta <a> (anchor) que crea un enlace de navegación. Atributos:
-                            - href "/": Define la ruta del destino (página principal de Legalis)
-                            - aria-label="Ir al inicio de Legalis": Descripción accesible para lectores de pantalla.
-                            Puede incluir además: Target (pestaña), rel (seguridad/SEO), title (tooltip), download (descarga).
-                            Este enlace normalmente envuelve el logo para permitir volver al inicio del sistema -->
-                        <a href="/" aria-label="Ir al inicio de Legalis" title="Ir al inicio"> 
-                        
-                            <!-- Etiqueta <img> que inserta el logo del sistema Legalis. Atributos:
-                                - src: ruta dinámica generada con url_for hacia el archivo SVG del logo en static/img/logo.
-                                - alt: texto alternativo para accesibilidad y SEO ("Logo de Legalis").
-                                - class: clase CSS para controlar tamaño y estilo del logo.
-                                El logo normalmente va dentro de un <a> para permitir navegación al inicio
-                            -->
-                            <img 
-                                src="{{ url_for('static', filename='img/logo/logo.svg') }}" 
-                                alt="Logo de Legalis" 
-                                class="imagen-logo">
-                                
-                            
-                            <!-- Etiqueta <span> que muestra el nombre del sistema ("Legalis") junto al logo.
-                                Se usa como texto de marca y se estiliza mediante la clase CSS "texto-marca"
-                                para controlar tipografía, tamaño y color sin romper el flujo del layout 
-                            -->
-                            <span class="texto-marca">Legalis</span>
-                        
-                        <!-- Cierre del enlace <a> que envuelve el logo y el texto de marca, finalizando la zona clickeable hacia el inicio de Legalis -->
-                            </a>
+                <!-- Bloque de identidad visual del sitio. Contiene el logo y nombre del sistema Legalis -->
+                <div class="bloque-logo">
 
-                    <!-- Cierre del contenedor del bloque de logo e identidad visual -->
-                    </div>
-                    
-                    <!-- Etiqueta <nav> que define la sección de navegación principal. La clase "menu-visitante" identifica el menú mostrado a usuarios no autenticados
-                    permitiendo aplicar estilos y lógica diferenciado del sistema Legalis. -->
-                    <nav class="menu-visitante">
+                    <!-- Etiqueta <a> (anchor) que crea un enlace de navegación. Atributos:
+                        - href="/": define la ruta de destino (página principal de Legalis).
+                        - aria-label="Ir al inicio de Legalis": descripción accesible para lectores de pantalla.
+                        Puede incluir además: target (pestaña), rel (seguridad/SEO), title (tooltip), download (descarga).
+                        Este enlace normalmente envuelve el logo para permitir volver al inicio del sistema -->
+                    <a href="/" aria-label="Ir al inicio de Legalis" title="Ir al inicio">
 
-                        <!-- Enlace del menú principal hacia la sección "Tienda". Atributos y lógica:
-                            - href="/": dirige a la ruta principal (vista inicio de Flask).
-                            - class="enlace-menu": clase base de estilo del menú
-                            - {% if request.endpoint == 'inicio' %}activo{% endif %}: lógica Jinja que agrega la clase "activo" cuando la vista actual coincide con 'inicio', resaltando visualmente la opción seleccionada. Esto permite mostrar al usuario en qué sección del sistema Legalis se encuemtra.
+                        <!-- Etiqueta <img> que inserta el logo del sistema Legalis. Atributos:
+                            - src: ruta dinámica generada con url_for hacia el archivo SVG del logo en static/img/logo.
+                            - alt: texto alternativo para accesibilidad y SEO ("Logo de Legalis").
+                            - class: clase CSS para controlar tamaño y estilo del logo.
+                            El logo normalmente va dentro de un <a> para permitir navegación al inicio.
                         -->
-                        <a href="/" class="enlace-menu {% if request.endpoint == 'inicio' %}activo{% endif %}">Tienda</a>
+                        <img
+                            src="{{ url_for('static', filename='img/logo/logo.svg') }}"
+                            alt="Logo de Legalis"
+                            class="imagen-logo"
+                        >
 
-                        <!-- Enlace del menú principal hacia la sección "Preguntas Frecuentes". Atributos y Lógica:
-                        - href="/preguntas": dirige a la ruta del módulo FAQ de Legalis.
-                        - class="enlace-menu": clase base de estilo común del menú
-                        - {% if request.endpoint == 'preguntas' %}activo{% endif %}: lógica Jinja que añade la clase "activo" cuando la vista actuañ corresponde a 'preguntas', resaltando visualmente la opción activa.
-                        Permite al usuario identificar en qué sección del sistema se encuentra. 
+                        <!-- Etiqueta <span> que muestra el nombre del sistema ("Legalis") junto al logo.
+                            Se usa como texto de marca y se estiliza mediante la clase CSS "texto-marca"
+                            para controlar tipografía, tamaño y color sin romper el flujo del layout.
                         -->
-                        <a href="/preguntas" class="enlace-menu {% if request.endpoint == 'preguntas' %}activo{% endif %}">Preguntas Frecuentes</a>
-                        
-                        <!-- Enlace del menú principal hacia la sección institucional "Quiénes somos".
-                            - href="/nosotros": dirige a la vista nosotros del sistema Legalis.
-                            - class="enlace-menu": clase base de estilos del menú
-                            - {% if request.endpoint == 'nosotros' %}activo{% endif %}: agrega la clase "activo" cuando
-                            la vista actual es "nosotros", resaltandola opción seleccionada. Permite identificar visualmente la sección activa del sistema. 
-                        -->
-                        <a href="/nosotros" class="enlace-menu {% if request.endpoint == 'nosotros' %}activo{% endif %}">Quiénes Somos</a>
+                        <span class="texto-marca">Legalis</span>
 
-                    <!--Cierre de la sección de navegación principal del menú de visitantes --> 
-                    </nav>
-                    
-                    <!-- Contenedor de la zona de acceso a usuarios. Agrupa los elementos relacionados con registro e ingreso dentro del encabezado del sistema Legalis
+                    <!-- Cierre del enlace <a> que envuelve el logo y el texto de marca, finalizando la zona clickeable hacia el inicio de Legalis -->
+                    </a>
+
+                <!-- Cierre del contenedor del bloque de logo e identidad visual -->
+                </div>
+
+                <!-- Etiqueta <nav> que define la sección de navegación principal. La clase "menu-visitante" identifica el menú mostrado a usuarios no autenticados,
+                permitiendo aplicar estilos y lógica diferenciada dentro del sistema Legalis. -->
+                <nav class="menu-visitante">
+
+                    <!-- Enlace del menú principal hacia la sección "Tienda". Atributos y lógica:
+                        - href="/": dirige a la ruta principal (vista inicio de Flask).
+                        - class="enlace-menu": clase base de estilo del menú.
+                        - {% if request.endpoint == 'inicio' %}activo{% endif %}: lógica Jinja que agrega la clase "activo" cuando la vista actual coincide con 'inicio', resaltando visualmente la opción seleccionada. Esto permite mostrar al usuario en qué sección del sistema Legalis se encuentra.
                     -->
-                    <div class="zona-acceso">
+                    <a href="/" class="enlace-menu {% if request.endpoint == 'inicio' %}activo{% endif %}">Tienda</a>
 
-                        <!-- Enlace de la zona de acceso que dirige al formulario de registro de usuarios.
-                            - href="/registro": dirige a la vista nosotros del sistema Legalis.
-                            - class="enlace-menu": clase base de estilos del header
-                            - {% if request.endpoint == 'registro' %}activo{% endif %}: agrega la clase "activo" cuando la página actual corresponde al endpoint "registro", resaltando el enlace.
-                            Forma parte del módulo de autenticación del sistema Legalis.
-                        -->
-                        <a href="/registro" class="enlace-menu {% if request.endpoint == 'registro' %}activo{% endif %}">Registrarse</a>
+                    <!-- Elemento: Enlace de navegación dinámico (HTML + Jinja2). -->
+                    <!-- Comentario Técnico: Crea un enlace que lleva a la página de preguntas usando Flask y además detecta si el usuario ya está en esa página. -->
+                    <!-- Función Técnica:
+                    1) url_for('preguntas') genera automáticamente la dirección correcta de la página.
+                    2) request.endpoint verifica qué vista está actualmente abierta.
+                    3) Si coincide con "preguntas", agrega la clase CSS "activo" para resaltar el menú. -->
+                    <!-- Diccionario:
+                    url_for         | Construye la URL desde el nombre de la función Flask | Evita errores al cambiar rutas.
+                    request.endpoint | Nombre interno de la vista actual | Permite saber en qué página está el usuario.
+                    activo          | Clase CSS de estado | Sirve para marcar la opción del menú seleccionada. -->
+                    <a href="{{ url_for('preguntas') }}" class="enlace-menu {% if request.endpoint == 'preguntas' %}activo{% endif %}">Preguntas Frecuentes</a>
 
-                        <!--Enlace de la zona de acceso que dirige a la vista de inicio de sesión (login).
-                            - href="/ingreso": apunta al endpoint de autenticación de usuarios.
-                            - class="enlace-menu": clase base de estilos del header.
-                            - {% if request.endpoint == 'ingreso' %}activo{% endif %}: agrega la clase "activo" cuando la página actual corresponde al endpoint "ingreso", resaltando visualmente el enlace.
-                            Forma parte del módulo de autenticación del sistema Legalis.
-                        -->
-                        <a href="/ingreso" class="enlace-menu {% if request.endpoint == 'ingreso' %}activo{% endif %}">Ingresar</a>
+                    <!-- Enlace del menú principal hacia la sección institucional "Quiénes Somos".
+                        - href="/nosotros": dirige a la vista nosotros del sistema Legalis.
+                        - class="enlace-menu": clase base de estilos del menú.
+                        - {% if request.endpoint == 'nosotros' %}activo{% endif %}: agrega la clase "activo" cuando
+                        la vista actual es "nosotros", resaltando la opción seleccionada. Permite identificar visualmente la sección activa del sistema.
+                    -->
+                    <a href="/nosotros" class="enlace-menu {% if request.endpoint == 'nosotros' %}activo{% endif %}">Quiénes Somos</a>
+
+                    <!-- Cierre de la sección de navegación principal del menú de visitantes -->
+                    </nav>
+
+                <!-- Contenedor de la zona de acceso de usuarios. Agrupa los elementos relacionados con registro e ingreso dentro del encabezado del sistema Legalis.
+                -->
+                <div class="zona-acceso">
+
+                    <!-- Enlace de la zona de acceso que dirige al formulario de registro de usuarios.
+                        - href="/registro": apunta a la vista de creación de cuenta.
+                        - class="enlace-menu": clase base de estilos del header.
+                        - {% if request.endpoint == 'registro' %}activo{% endif %}: agrega la clase "activo" cuando la página actual corresponde al endpoint "registro", resaltando el enlace.
+                        Forma parte del módulo de autenticación del sistema Legalis.
+                    -->
+                    <a href="/registro" class="enlace-menu {% if request.endpoint == 'registro' %}activo{% endif %}">Registrarse</a>
+
+                    <!-- Enlace de la zona de acceso que dirige a la vista de inicio de sesión (login).
+                        - href="/ingreso": apunta al endpoint de autenticación de usuarios.
+                        - class="enlace-menu": clase base de estilos del header.
+                        - {% if request.endpoint == 'ingreso' %}activo{% endif %}: agrega la clase "activo" cuando la página actual corresponde al endpoint "ingreso", resaltando visualmente el enlace.
+                        Forma parte del módulo de control de acceso del sistema Legalis.
+                    -->
+                    <a href="/ingreso" class="enlace-menu {% if request.endpoint == 'ingreso' %}activo{% endif %}">Ingresar</a>
 
                     <!-- Cierre del contenedor de la zona de acceso de usuarios del encabezado -->
-                    </div>
-
-                <!-- Cierre del encabezado principal de navegación dek encabezado -->
                 </div>
-                
-            <!-- Cierre del encabezado principal del sitio Legalis -->   
-            </header>
 
-            <!-- Separador horizonatl que delimita el encabezado del contenido principal del sistema -->
-            <hr>
-            
-            <!-- ====================== CONTENIDO PRINCIPAL ====================== -->
+            <!-- Cierre del contenedor principal de navegación del encabezado -->
+            </div>
 
-            <!-- Contenedor semántico principal del documento. Aquí se renderiza el contenido dinámico de cada vista del sistema Legalis (tienda, formularios, páginas informativas, etc.). La clase "seccion-principal" controla el layout, espaciado y comportamiento visual 
-            -->
-            <main class="seccion-principal">
+        <!-- Cierre del encabezado principal del sitio Legalis -->
+        </header>
 
-                <!-- Bloque dinámico de Jinja2 para inyección de contenido. Las plantillas hijas que extienden de este archivo reemplazan este bloque con su propio contenido, permitiendo reutilizar la estructura base del sustema Legalis. -->
-                {% block contenido %}
+        <!-- Separador horizontal que delimita el encabezado del contenido principal del sistema -->
+        <hr>
 
-        <!-- Cierre del bloque dinámico de Jinja2 denominado "contenido". Marca el final de la sección que será reemplazada por las plantillas hijas que extienden la estructura base del sistema Legalis. -->
-        {% endblock %}
-        
-        <!-- Cierre del contenedor semántico principal del pie de página del sistema -->
-    </main>
+        <!-- ================ CONTENIDO PRINCIPAL ================ -->
+
+        <!-- Contenedor semántico principal del documento. Aquí se renderiza el contenido dinámico de cada vista del sistema Legalis (tienda, formularios, páginas informativas, etc.). La clase "seccion-principal" controla el layout, espaciado y comportamiento visual.
+        -->
+        <main class="seccion-principal">
+
+            <!-- Bloque dinámico de Jinja2 para inyección de contenido. Las plantillas hijas que extienden de este archivo reemplazan este bloque con su propio contenido, permitiendo reutilizar la estructura base del sistema Legalis. -->
+            {% block contenido %}
+
+
+            <!-- Cierre del bloque dinámico de Jinja2 denominado "contenido". Marca el final de la sección que será reemplazada por las plantillas hijas que extienden la estructura base del sistema Legalis. -->
+            {% endblock %}
+
+            <!-- Cierre del contenedor semántico principal donde se renderiza el contenido dinámico -->
+        </main>
 
         <!-- Separador horizontal que delimita el contenido principal del pie de página del sistema -->
         <hr>
 
-        <!-- ====================== PIE DE PÁGINA ====================== -->
+        <!-- ================ PIE DE PÁGINA ================ -->
         <!-- Contenedor semántico del pie de página del sistema Legalis. Incluye información institucional, legal y enlaces secundarios. La clase "pie-pagina" controla la presentación visual del footer.
         -->
         <footer class="pie-pagina">
@@ -184,32 +189,32 @@
             -->
             <div class="contenedor-footer">
 
-                <!-- Bloque de derechos de autor de pie de página. Contiene la información legal de titularidad y protecció del sistema Legalis. La clase "copyright" controla el estilo del texto institucional. -->
+                <!-- Bloque de derechos de autor del pie de página. Contiene la información legal de titularidad y protección del sistema Legalis. La clase "copyright" controla el estilo del texto institucional.-->
                 <div class="copyright">
 
-                    <!-- Párrafo de derechos de auor del sistema 
-                        - &copy; : entidad HTML que muestra el simbolo ©.
-                        - 2026: año e referencia de la protección.
+                    <!-- Párrafo de derechos de autor del sistema.
+                        - &copy;: entidad HTML que muestra el símbolo ©.
+                        - 2026: año de referencia de la protección.
                         - Legalis: titular de los derechos.
                         - "Todos los derechos reservados": declaración legal de protección del contenido.
                     -->
-                    <p>&copy; 2026 Legalis. Todos los derechos reservados.</p>
-                
-                    </div>
+                    <p>&copy; <strong>2026 Legalis. Todos los derechos reservados.</strong></p>
 
-                    <!-- Contenedor de enlaces legales del pe de página. Agrupa accesos a políticas, términos, avisos legales y otra información jurídica relevante del sistema Legalis. La clase "enlaces-legales" controla la presentación y distribución visual.
+                </div>
+
+                <!-- Contenedor de enlaces legales del pie de página. Agrupa accesos a políticas, términos, avisos legales y otra información jurídica relevante del sistema Legalis. La clase "enlaces-legales" controla la presentación y distribución visual.
+                -->
+                <div class="enlaces-legales">
+
+                    <!-- Enlace a la Política de Privacidad de Legalis. Permite al usuario consultar el tratamiento de datos personales, derechos, deberes y condiciones de protección de información. Incluye aria-label para accesibilidad y mejor navegación con lectores de pantalla. El atributo href define la ruta interna del sistema.
                     -->
-                    <div class="enlaces-legales">
-                    
-                        <!-- Enlace a la Política de Privacidad de Legalis. Permite al usuario consultar el tartamiento de datos personales, derechos, deberes y condiciones de protección de información. Incluye aria-label para accesibilidad y mejor navegación con lectores de pantala. El archivo href define la ruta interna del sistema. 
-                        -->
-                        <a href="/politica-privacidad" aria-label="Ver política de privacidad de Legalis">Política de Privacidad</a>
-                        
-                        <!-- Enla ce a los Términos y Condiciones de Legalis. Define el marco contractual del uso de la plataforma. Incluye aria-label para accesibilidad y mejor navegación con lestores de pantalla. El atributo href señala la rtuta interna del sistema
-                        -->
-                    <a href="/terminos-condiciones" aria-label="Ver términos y condiciones de Legalis">Términos y Condiciones</a>
+                    <a href="/politica-privacidad" aria-label="Ver política de privacidad de Legalis"><strong>Política de Privacidad</strong></a>
 
-                <!-- Cierre del contenedor de enlaces legales del footer. Finaliza el bloque que agrupa los accesos a políticas y términos del sistema Legalis. -->
+                    <!-- Enlace a los Términos y Condiciones de Legalis. Define el marco contractual del uso de la plataforma. Incluye aria-label para accesibilidad y mejor navegación con lectores de pantalla. El atributo href señala la ruta interna del sistema.
+                    -->
+                    <a href="terminos-condiciones" aria-label="Ver términos y condiciones de Legalis"><strong>Términos y Condiciones</strong></a>
+
+                <!-- Cierre del contenedor de enlaces legales del footer. Finaliza el bloque que agrupa los accesos a políticas y términos del sistema Legalis.-->
                 </div>
 
                 <!-- Contenedor de contacto y soporte del pie de página. Agrupa los canales oficiales de atención al usuario de Legalis, como correos, enlaces de ayuda o información institucional. La clase "contacto-soporte" controla su presentación visual.
@@ -218,9 +223,9 @@
 
                     <!-- Párrafo de información de atención al usuario (PQR). Muestra el canal oficial de soporte de Legalis para peticiones, quejas y reclamos. El correo se resalta con <strong> para mejorar la visibilidad del dato de contacto.
                     -->
-                    <p>Antención al usuario (PQR): <strong>soporte@legalis.com</strong></p>
+                    <p>Atención al usuario (PQR): <strong>soporte@legalis.com</strong></p>
 
-                <!-- Cierre del contenedor de contacto y sopore del footer. Finaliza el bloque que presenta los canales oficiales de atención al usuario del sistema Legalis.
+                <!-- Cierre del contenedor de contacto y soporte del footer. Finaliza el bloque que presenta los canales oficiales de atención al usuario del sistema Legalis.
                 -->
                 </div>
 
@@ -228,11 +233,11 @@
             </div>
 
             <!-- Cierre del elemento semántico <footer>. Marca el final del pie de página que contiene información legal, institucional y de soporte del sistema Legalis. -->
-            </footer>
+        </footer>
 
-        <!-- Cierre del elemento <body>. Finaliza todo el contenido visible e interactivo del documento HTML de la plataforma Legalis. -->
-        </body>
+    <!-- Cierre del elemento <body>. Finaliza todo el contenido visible e interactivo del documento HTML de la plataforma Legalis.-->
+    </body>
 
-    <!-- Cierre del elemento raíz <html>. Marca el final completo del documento HTML que estructura 
-    la interfaz base del sistema Legalis. -->
-    </html>
+<!-- Cierre del elemento raíz <html>. Marca el final completo del documento HTML que estructura
+la interfaz base del sistema Legalis. -->
+</html>
