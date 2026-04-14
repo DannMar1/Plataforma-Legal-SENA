@@ -11,7 +11,23 @@
 <!-- Diccionario: Título de Pestaña | Texto que aparece arriba en el navegador | Debe ser corto y describir la página. -->
 {% block titulo_pestana %} Preguntas Frecuentes {% endblock %}
 
-<!-- Elemento: Bloque de contenido de Jinja2. -->
+<!-- Elemento: Bloque de Jinja2 para agregar estilos personalizados. -->
+<!-- Comentario Técnico: Inicia un bloque que permitirá incluir CSS adicional en esta página sin modificar la plantilla base. -->
+<!-- Función Técnica: Sirve para agregar estilos específicos solo a esta vista (por ejemplo, diseño exclusivo de FAQ). --> <!-- Diccionario: Estilos Adicionales | Espacio reservado para agregar CSS propio de una página | Evita modificar directamente los estilos globales. -->
+{% block estilos_adicionales %}
+
+    <!-- Elemento: Etiqueta <link> para conectar una hoja de estilos CSS externa. -->
+    <!-- Comentario Técnico: Carga el archivo preguntas.css desde la carpeta static usando url_for para generar la ruta corecta automáticamente. -->
+    <!-- Función Técnica : Aplica los estilos específicos de esta página sin afectar otras seciones del sitio. -->
+    <!-- Diccionario: Hoja de Estilos (CSS) | Archivo que controla colores, tamaños y diseño visual | Debe guardarse en la carpeta static para que Flask pueda servirlo correctamente. --> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/preguntas.css') }}">
+
+<!-- Elemento: Etiqueta de cierre de bloque en Jinja2. -->
+<!-- Comentario Técnico: Finaliza el bloque "estilos_adicionales" abierto anteriormente. -->
+<!-- Función Técnica: Indica a la pantalla base que ya no se agregarán más estilos personalizados para esta página --> <!-- Diccionario: Instrucción que cierra un bloque de Jinja2 | Siempre debe corresponder al block que se abrió. -->
+{% endblock %}
+
+<!-- Elemento: Bloque de contenido de Jinja2. --> 
 <!-- Comentario Técnico: Indica el inicio de una sección que reemplazará el bloque con el mismo nombre definido en base.html. -->
 <!-- Función Técnica: Marca el espacio donde se escribirá el contenido principal de esta página (lo que el usuario verá en el cuerpo del sitio). -->
 <!-- Diccionario: Bloque de Contenido | Espacio reservado en una plantilla para insertar información propia de cada página | Debe tener el mismo nombre que el bloque definido en la plantilla base. -->
@@ -60,13 +76,13 @@
             <!-- Comentario Técnico: Define el texto visible que el usuario puede presionar para abrir o cerrar el contenido desplegable. -->
             <!-- Función Técnica : Actúa como el título de la pregunta dentro del acordeón de preguntas frecuentes. -->
             <!-- Diccionario: Titulo Desplegable | Texto clickeable que muestra u oculta información | Debe ser corto y claro para el usuario. -->
-            <summary><strong>1. ¿Qué es una acción de tutela?</strong></summary>
+            <summary>1. ¿Qué es una acción de tutela?</summary>
 
             <!-- Elemento: Párrafo HTML <p>. -->
             <!-- Comentario Técnico: Contiene el texto explicativo que se mostrará al abrir la pregunta frecuente. -->
             <!-- Función Técnica : Presenta la respuesta de forma clara y separada del título para facilitar la lectura. -->
             <!-- Diccionario: Párrafo | Bloque de texto informativo | Debe redactarse en lenguaje sencillo para el usuario. -->
-            <p><strong>Es un mecanismo judicial rápido que permite a cualquier persona solicitar ante un juez la protección inmediata de sus derechos fundamentales cuando estos estén siendo vulnerados o amenazados por una autoridad o, en algunos casos, por un particular.</strong></p>
+            <p>Es un mecanismo judicial rápido que permite a cualquier persona solicitar ante un juez la protección inmediata de sus derechos fundamentales cuando estos estén siendo vulnerados o amenazados por una autoridad o, en algunos casos, por un particular.</p>
 
             <!-- Elemento: Etiqueta de cierre </details>. -->
             <!-- Comentario Técnico: Finaliza el bloque desplegable de la pregunta frecuente. -->
@@ -84,19 +100,19 @@
             <!-- Comentario Técnico: Muestra la segunda pregunta que el usuario podrá presionar para ver la respuesta. -->
             <!-- Función Técnica : Identifica el tema del contenido oculto que se desplegará al hacer clic. -->
             <!-- Diccionario: Titulo Desplegable | Texto clickeable que abre o cierra la información | Debe formularse como pregunta clara. -->
-            <summary><strong>2. ¿Quiénes pueden presentar una acción de tutela?</strong></summary>
+            <summary>2. ¿Quiénes pueden presentar una acción de tutela?</summary>
 
             <!-- Elemento: Párrafo HTML <p>. -->
             <!-- Comentario Técnico: Contiene la respuesta breve a la pregunta mostrada en el desplegable. -->
             <!-- Función Técnica : Informa al usuario de manera directa quién puede usar este mecanismo judicial. -->
             <!-- Diccionario: Respuesta | Texto que explica la pregunta realizada | Debe ser claro y fácil de entender. -->
-            <p><strong>Puede presentarla cualquier persona, sin necesidad de abogado.</strong></p>
+            <p>Puede presentarla cualquier persona, sin necesidad de abogado.</p>
 
             <!-- Elemento: Párrafo HTML <p>. -->
             <!-- Comentario Técnico: Amplía la respuesta indicando otras personas que pueden presentar la solicitud en nombre del afectado. -->
             <!-- Función Técnica : Aclara que no solo el titular del derecho puede actuar, sino también terceros autorizados o que lo representen. -->
             <!-- Diccionario: Representación | Actuar en nombre de otra persona | Se usa cuando el afectado no puede presentar la solicitud directamente. -->
-            <p><strong>También puede hacerlo un familiar, representante, defensor del pueblo, personero municipal o cualquier tercero que actúe en nombre del afectado cuando este no pueda hacerlo por sí mismo.</strong></p>
+            <p>También puede hacerlo un familiar, representante, defensor del pueblo, personero municipal o cualquier tercero que actúe en nombre del afectado cuando este no pueda hacerlo por sí mismo.</p>
 
             <!-- Elemento: Etiqueta de cierre </details>. --> <!-- Comentario Técnico: Finaliza el segundo bloque desplegable correspondiente a la pregunta número 2. --> <!-- Función Técnica : Separa esta pregunta de la siguiente para mantener el orden y la estructura correcta del código. --> <!-- Diccionario: Cierre de Desplegable | Indica el final del contenido asociado a una pregunta | Evita errores de visualización si se omite. -->
         </details>
@@ -111,13 +127,13 @@
             <!-- Comentario Técnico: Muestra la tercera pregunta que el usuario podrá presionar para ver la respuesta. -->
             <!-- Función Técnica : Identifica el tema del contenido oculto que se desplegará al hacer clic. -->
             <!-- Diccionario: Titulo Desplegable | Texto clickeable que abre la respuesta | Debe ser una pregunta clara y concreta. -->
-            <summary><strong>3. ¿Cuándo presentar una acción de tutela?</strong></summary>
+            <summary>3. ¿Cuándo presentar una acción de tutela?</summary>
 
             <!-- Elemento: Párrafo HTML <p>. -->
             <!-- Comentario Técnico: Introduce una explicación previa a una lista de situaciones. -->
             <!-- Función Técnica : Prepara al usuario para entender los casos en los que aplica la acción. -->
             <!-- Diccionario: Texto Introductorio | Frase que anuncia información que viene a continuación | Sirve para contextualizar listas o ejemplos. -->
-            <p><strong>Debe presentarse cuando:</strong></p>
+            <p>Debe presentarse cuando:</p>
 
             <!-- Elemento: Lista no ordenada HTML <ul>. -->
             <!-- Comentario Técnico: Inicia un listado de elementos sin numeración automática. -->
@@ -129,19 +145,19 @@
                 <!-- Comentario Técnico: Muestra el primer caso en el que procede presentar la acción de tutela. -->
                 <!-- Función Técnica : Permite enumerar claramente cada situación dentro de la lista. -->
                 <!-- Diccionario: Ítem | Elemento individual dentro de una lista | Cada idea debe ir en un <li> separado. -->
-                <li><strong>Se esté vulnerando o amenazando un derecho fundamental.</strong></li>
+                <li>Se esté vulnerando o amenazando un derecho fundamental.</li>
 
                 <!-- Elemento: Ítem de lista HTML <li>. -->
                 <!-- Comentario Técnico: Presenta otro caso en el que procede la acción de tutela. -->
                 <!-- Función Técnica : Continúa la enumeración de situaciones dentro de la lista. -->
                 <!-- Diccionario: Ítem | Elemento individual dentro de una lista | Mantiene separadas las ideas para mejor comprensión. -->
-                <li><strong>No exista otro medio judicial eficaz para protegerlo, o</strong></li>
+                <li>No exista otro medio judicial eficaz para protegerlo, o</li>
 
                 <!-- Elemento: Ítem de lista HTML <li>. -->
                 <!-- Comentario Técnico: Presenta el último caso en el que procede la acción de tutela. -->
                 <!-- Función Técnica : Completa la lista de situaciones para que el usuario identifique cuándo puede usar este mecanismo. -->
                 <!-- Diccionario: Perjuicio Irremediable | Daño grave que debe evitarse de inmediato | Permite usar la tutela de forma urgente. -->
-                <li><strong>El daño sea urgente y requiera protección inmediata (perjuicio irremediable).</strong></li>
+                <li>El daño sea urgente y requiera protección inmediata (perjuicio irremediable).</li>
 
                 <!-- Elemento: Etiqueta de cierre </ul>. -->
                 <!-- Comentario Técnico: Finaliza la lista de situaciones en las que procede la acción de tutela. -->
@@ -152,27 +168,26 @@
         <!-- Elemento: Etiqueta de cierre </details>. -->
         <!-- Comentario Técnico: Finaliza el bloque desplegable correspondiente a la pregunta número 3. -->
         <!-- Función Técnica : Cierra correctamente la estructura para evitar que el siguiente contenido quede dentro del mismo desplegable. -->
-        <!-- Diccionario: Cierre de Desplegable | Indica el final del contenido asociado a una pregunta | Es obligatorio cerrar cada <details> que se
-        abre. -->
+        <!-- Diccionario: Cierre de Desplegable | Indica el final del contenido asociado a una pregunta | Es obligatorio cerrar cada <details> que se abre. -->
         </details>
 
         <details>
-            <summary><strong>4. ¿Qué requisitos debe cumplir una acción de tutela?</strong></summary>
+            <summary>4. ¿Qué requisitos debe cumplir una acción de tutela?</summary>
             <p><strong>Debe contener:</strong></p>
             <ul>
-                <li><strong>Identificación del solicitante.</strong></li>
-                <li><strong>Identificación de la entidad o persona demandada.</strong></li>
-                <li><strong>Descripción clara de los hechos.</strong></li>
-                <li><strong>Derecho fundamental vulnerado.</strong></li>
-                <li><strong>Lo que se solicita al juez (pretensión).</strong></li>
-                <li><strong>Pruebas, si se tienen.</strong></li>
+                <li>Identificación del solicitante.</li>
+                <li>Identificación de la entidad o persona demandada.</li>
+                <li>Descripción clara de los hechos.</li>
+                <li>Derecho fundamental vulnerado.</li>
+                <li>Lo que se solicita al juez (pretensión).</li>
+                <li>Pruebas, si se tienen.</li>
             </ul>
-            <p><strong>No requiere formalidades estrictas ni lenguaje jurídico complejo.</strong></p>
+            <p>No requiere formalidades estrictas ni lenguaje jurídico complejo.</p>
         </details>
 
         <details>
-            <summary><strong>5. ¿Cuánto tiempo tiene un juez para fallar una acción de tutela?</strong></summary>
-            <p><strong>El juez debe decidir en máximo 10 días hábiles desde la presentación de la tutela.</strong></p>
+            <summary>5. ¿Cuánto tiempo tiene un juez para fallar una acción de tutela?</summary>
+            <p>El juez debe decidir en máximo 10 días hábiles desde la presentación de la tutela.</p>
         </details>
 
         <!-- Elemento: Etiqueta de cierre </section>. -->
