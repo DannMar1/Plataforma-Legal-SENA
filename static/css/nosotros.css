@@ -1,0 +1,623 @@
+/* =============================================================== */
+/* ESTILOS DE IDENTIDAD INSTITUCIONAL (QUIÉNES SOMOS)              */
+/* =============================================================== */
+
+/* 1. Contenedor Maestro */
+
+/* Elemento: Selector de clase principal de la sección institucional */
+/* Comentario Técnico: Identifica el contenido que agrupa toda la información "Quiénes somos", misión, visión, valores y descrpción del proyecto. */
+/* Función Técnica: Permite aplicar estilos únicamente a esta sección sin afectar otros elementos de la página. Es la referencia base para todas las reglas internas */
+/* Diccionario: 
+    .seccion-institucional | Selector de clase | Aplica estilos a todos los elementos que tengan esta clase.
+    {   | Llave de apertura | Indica el inicio del bloque de reglas CSS. */
+.seccion-institucional {
+
+    /* Elemento: Propiedad de ancho máximo del contenedor */
+    /* Comentario Técnico: Establece el límite máximo de anchura que puede ocupar la sección institucional dentro de la página. */
+    /* Función Técnica: Mejora la legibilidad evitando líneas de texto demasiado largas en pantallas grandes y mantiene un diseño centrado tipo columna de lectura. */
+    /* Diccionario: max-width | Propiedad CSS | Define el ancho máximo permitido del elemento.
+        800px     | Valor en píxeles | Tamaño suficiente para lectura cómoda en escritorio. */
+    max-width: 800px;        /* Ancho de lectur óptimo */
+
+    /* Elemento: Propiedad de margen externo del contenedor */
+    /* Comentario Técnico: Define los márgenes externos del elemento, establecimiento 0 para arriba y abajo, y automático para izquierda y derecha. */
+    /* Función Técnica: Centra horizontalmente el contenedor dentro de su elemento padre cuando tiene un ancho definido (max-width). */
+    /* Diccionario: 
+        margin | Propiedad CSS | Controla el espacio externo alrededor del elemento.
+        0      | Valor numérico | Sin margen superior ni inferior.
+        auto   | Valor automático | Distribuye el espacio disponible a izquierda y derecha para centrar el elemento. */
+    margin: 0 auto;         /* Centrado horizontal */
+
+    /* Elemento: Propiedad de relleno interno del contenedor */
+    /* Comentario Técnico: Agrega espacio interno entre le borde del contenedor y su contenido. */
+    /* Función Técnica: Evita que el texto quede pegado a los bordes, mejorando la legibilidad y la estática visual. */
+    /* Diccionario: 
+        padding | Propiedad CSS | Define el espacio interno del elemento.
+        40px    | Primer valor  | Define espacio vertical (arriba y abajo).
+        20px    | Segundo valor | Espacio horizontal (izquierda y derecha). */
+    padding: 40px 20px;     /* Aire interno */
+
+    /* Elemento: Propiedad de color de texto. */
+    /* Comentario Técnico: Define el color principal del texto dentro de la sección institucional. */
+    /* Función Técnica: Establece un tono gris oscuro para mejorar la lectura y evitar el contraste excesivo dek negro puro. */
+    /* Diccionario: 
+        color   | Propiedad CSS | Controla el color del texto del elemento.
+        #333    | Código hexadecimal | Gris oscuro comúnmente usado para lectura cómoda en pantalla. */
+    color: #333;    /* Color base de texto gris oscuro */
+
+/* Elemento:Cierre del bloque de reglas CSS */
+/* Comentario Técnico: Finaliza la definición de estilos aplicados al selector .seccion-institucional. */
+/* Función Técnica: Indica al navegador que las propiedades declaradas han terminado, evitando que afecten otros selectores. */
+/* Diccionario: } | Llave de cierre | Marca el fin del conjunto de reglas CSS asociadas al selector.  */
+}
+
+/* 2. Encabezado e Imágen */
+
+/* Elemento: Selector descendente de encabezado principal */
+/* Comentario Técnico: Selecciona el título principal (h1) únicamente cuando se encuentra dentro de la sección institucional. */
+/* Función Técnica: Permite aplicar estilos exclusivos al encabezado sin afectar otros h1 del sitio web. */
+/* Diccionario: 
+    .seccion-institucional h1 | Selector descendente | Aplica estilos al h1 que está dentro de esa clase.
+    { | Llave de apertura | Inicia el bloque de reglas CSS. */
+.seccion-institucional h1 {
+
+    /* Elemento: Propiedad de alineación de texto */
+    /* Comentario Técnico: Define la alineación horizontal del contenido textual dentro del encabezado h1. */
+    /* Función Técnica: Centra visualmente el título principal para darle mayor protagonismo y equilibrio dentro de la sección institucional. */
+    /* Diccionario: 
+        text-align | Propiedad CSS | Controla la alineación horizontal del texto.
+        center     | Valor | Centra el contenido dentro del contenedor. */
+    text-align: center;
+
+    /* Elemento: Tamaño de fuente del encabezado */
+    /* Comentario Técnico: Establece el tamaño del texto del título principal usando una unidad relativa. */
+    /* Función Técnica: Hace que el encabezado destaque visualmente y además sea adaptable a diferentes configuraciones de pantalla y accesibilidad del usuario. */
+    /* Diccionario: 
+        font-size | Propiedad CSS | Define el tamaño del texto.
+        rem       | Unidad relativa | Depende del tamaño de fuente raíz del navegador (más accesible que px).
+        2.5rem    | Valor | Aproximadamente 2.5 veces el tamaño base de la tipografía. */
+    font-size: 2.5rem;
+
+    /* Elemento: Propiedad de color del encabezado principal */
+    /* Comentario Técnico: Define el color específico del texto h1 dentro de la sección institucional. */
+    /* Función Técnica: Aplica un tono negro elegante personalizado para reforzar la identidad visual de Legalis y generar alto contraste sin usar negro absoluto. */
+    /* Diccionario:  
+        color     | Propiedad CSS | Establece el color del texto.
+        #1d1d1f   | Código hexadecimal | Tono negro-gris oscuro utilizado como color institucional. */
+    color: #1d1d1f;         /* Negro elegante Legalis */
+
+    /* Elemento: Margen inferior del encabezado */
+    /* Comentario Técnico: Agrega espacio debajo del título principal para separarlo del contenido siguiente. */
+    /* Función Técnica: Mejora la jerarquía visual y evita que el texto posterior quede pegado al encabezado. */
+    /* Diccionario: 
+        margin-bottom | Propiedad CSS | Define el espacio externo inferior del elemento. 
+        rem           | Unidad relativa | Depende del tamaño base de fuente del navegador.
+        2rem          | Valor | Aproximadamente dos líneas base de separación vertical. */
+    margin-bottom: 2rem;
+
+/* Elemento: Cierre del bloque de reglas CSS */
+/* Comentario Técnico: Finaliza la definición de estilos aplicados al selector .seccion-institucional h1. */
+/* Función Técnica: Indica al navegador que las propiedades del encabezado han terminado, evitando actar otros elementos. */
+/* Diccionario: } | Llave de cierre | Marca el fin del conjunto de reglas CSS asociadas al selector. */
+}
+
+/* Elemento: Selector de clase del contenedor de imágen institucional */
+/* Comentario Técnico: Selecciona el bloque que contiene la imágen representativa de la sección "Quiénes Somos". */
+/* Función Técnica: Permite aplicar estilos específicos al contenedor de la imágen sin afectar otras imágenes del sítio. */
+/* Diccionario: 
+    .contenedor-imagen-nosotros | Selector de clase | Aplica estilo al div que envuelve la imágen insitucional.
+    {  | Llave de apertura | Inicia el bloque de reglas CSS. */
+    .contenedor-imagen-nosotros {
+
+        /* Elemento: alineación del cotenido dentro del contenedor */
+        /* Comentario Técnico: Centra horizontalmente de la imágen ubicada dentro del contenedor. */
+        /* Función Técnica: Garantiza que la ilustración institucional quede visualmente equilibrada respecto al texto de la sección. */
+        /* Diccionario: 
+            text-align | Propiedad CSS | Define la alineación horizontal del contenido en línea.
+            center     | Valor | Coloca el conenido en el centro del contenedor. */
+        text-align: center;
+
+        /* Elemento: Margen inferior del contenedor de imágen */
+        /* Comentario Técnico: Agrega espacio debajo de la imágen institucional. */
+        /* Función Técnica: Separa visualmente la imágen del contenido textual siguiente, evitando saturación visual y mejorando la lectura. */
+        /* Diccionario: 
+            margin-bottom | Propiedad CSS | Define el espacio externo inferior del elemento.
+            rem           | Unidad relativa | Basada en el tamaño de fuente raíz del documento.
+            3rem          | Valor | Genera una separaci+on vertical amplia y cómoda. */
+        margin-bottom: 3rem;
+
+/* Elemento: Cierre deñ bloqe de reglas CSS */
+/* Comentario Técnico: Finaliza ña definición de etilos aplicados al selector .contenedor-imagen-nosotros. */
+/* Función Técnica: Indica el fin del conjunto de propiedades asociadas al contenedor de la imágen institucional, evitando que afecten otros selectores. */
+/* Diccionario: } | Llave de cierre | Marca el final del bloque de reglas CSS. */
+}
+
+/* Elemento: Selector descendente de imágen dentro del contenedor insitucional */
+/* Comentario Técnico: Selecciona únicamente la imágen ubicada dentro del contenedor .contenedor-imagen-nosotros. */
+/* Función Técnica: Permite aplicar estilos exclusivos a la imágen institucional sin afectar otras imágenes del sitio web. */
+/* Diccionario: 
+    .contenedor-imagen-nosotros img | Selector descendente | Aplica estilos a la imágen dentro del contenedor específico.
+    {                               | Llave de apertura | Inicia el bloque de reglas CSS. */
+.contenedor-imagen-nosotros img {
+
+    /* Elemento: Ancho máximo adaptable de la imágen */
+    /* Comentario Técnico: Limita el ancho de la imágen al tamaño de su contenedor. */
+    /* FUnción Técnica: Hace la imágen responsiva, evitando que se desarrolle en pantallas pequeñas o contenedores estrechos. */
+    /* Diccionario: 
+        max-width | Propiepdad CSS | Define el anco máaximo permitido del elemento.
+        100%      | Valor relativo | Ocupa como máximo el 100% del ancho del contenedor padre. */
+    max-width: 100%;        /* La imágen nunca será más ancha que su contenedor */
+
+    /* Elemento: Altura automática proporcional de la imágen */
+    /* Comentario Técnico: Permite que la lectura de la imagen se ajuste automáticamente según su ancho. */
+    /* FUnción Técnica: Mantiene la proporción original de la imagen evitando deformaciones al cambiar el tamaño. */
+    /* Diccionario: 
+        height  | Propiedad CSS | Define la altura del elemento.    
+        auto    | Valor automático | Calcula la altura en funciín del ancho y la proporción original */
+    height: auto;           /* Mantiene la proporción */
+
+    /* Elemento: Borde redondeado de la imagen */
+    /* Comentario Técnico: Aplica  esquinas redondeadas a la imagen institucional. */
+    /* FUnción Técnica: Suaviza la apariencia visual, haciendo el diseño más moderno y amigable para el usuario. */
+    /* Diccionario: 
+        border-radius | Propiedad CSS | Define el redondeo de las esquinas del elemento.
+        12px          | Valor en píxeles | Radio de curvatura aplicado a cadaesquina. */
+    border-radius: 12px;    /* Bordes suavizados */
+
+    /* Elemento: Sombra externa de la imagen */
+    /* Comentario Técnico: Agrega una sombra difusa alrededor de la imagen para generar profundidad visual. */
+    /* FUnción Técnica: Crea efecot de elevación (card-like), separando la imagen dek fondo y mejorando la estética profesional del diseño. */
+    /* Diccionario: 
+        box-shadow | Propiedad CSS | Aplica sombra alrededor del elemento.
+        0          | Desplazamiento horizontal | No hay movimiento lateral.
+        4px        | Desplazamiento vertical | La sombra se proyecta ligeramente hacia abajo.
+        12px       | Desenfoque (blur) | Define qué tan difusa es la sombra.
+        rgba()     | Función de color | Permite definir color con canal alfa (transparencia).
+        0.1        | Opacidad | Sombra sutil al 10% de intensidad. */
+    box-shadow: 0 4px 12px rgba (0, 0, 0, 0.1);  /* Sombra elegante */
+
+/* Elemento: Cierre del bloque de reglas CSS */
+/* Comentario Técnico: Finaliza la definición de estilos aplicados al selector .contenedor-imagen-nosotros img. */
+/* FUnción Técnica: Indica que las propiedades específicas de la imagen institucional han terminado, manteniendo a correcta estructura del archivo CSS. */
+/* Diccionario: }  | Llave de cierre | Marca el final del bloque de reglas asociado al selector. */
+}
+
+/* 3. Tipografía General de Bloques */
+
+/* Elemento: Selector de clase del bloque de texto institucional */
+/* Comentario Técnico: Identifica cada contenedor de contenido textual dentro de la sección institucional. */
+/* FUnción Técnica: Permite aplicar estilos independientes a cada bloque de información para mantener separación visual entre apartados. */
+/* Diccionario: 
+    .bloque-texto | Selector de clase | Aplica estilos a cada arttículo de contenido descriptivo.
+    {             | Llave de apertura | Inicia el bloque de reglas CSS. */
+.bloque-texto {
+
+    /* Elemento: Margen inferior del bloque de texto */
+    /* Comentario Técnico: Agrega espacio debajo de cada bloque textual institucional. */
+    /* FUnción Técnica: Separa visualmente los distintos artículos o apartados, mejorando la organización y evitando acumulación de contenido. */
+    /* Diccionario:
+        margin-bottom | Propiedad CSS | Define eñ espacio externo inferior del elemento.
+        rem           | Unidad relativa | Depende del tamaño base de fuente del documento.
+        3rem          | Valor | Genera una separación amplia y consistente entre bloques. */
+    margin-bottom: 3rem;
+
+/* Elemento: Cierre del bloque de reglas CSS */
+/* Comentario Técnico: Finaliza la definición de estilos aplicados al selector .blqoue-texto. */
+/* FUnción Técnica: Indica el fin del conjunto de propiedades asociadas a esta clase, manteniendo la estructura correcta del archivo CSS. */
+/* Diccionario: } | Llave de cierre | Marca el final del bloque de reglas CSS correspondiente al selector. */
+}
+
+/* Elemento: Selector descendente de encabezado dentro del bloque de texto */
+/* Comentario Técnico: Selecciona los titulos h2 que se enuentran dentro de un contenedor con clase .bloque-texto. */
+/* Función Técnica: Permite estilizar subtítulod de cada apartado institucional sin afectar otros h2 del sitio. */
+/* Diccionario: 
+    .bloque-texto h2 | Selector descendente | Aplica estilos al h2 dentro del bloque textual.
+    {                | Llave de apertura | Inicia el bloque de reglas CSS. */
+.bloque-texto h2 {
+
+    /* Elemento: Color del subtítulo institucional */
+    /* Comentario Técnico: Define el color del texto para los encabezados h2 dentro del bloque de texto. */
+    /* Función Técnica: Mantiene coherencia visual con el título principal usando el color institucional oscuro. */
+    /* Diccionario: 
+        color   |  Propiedad CSS | Establece el color del texto.
+        #1d1d1f | Código hexadecimal | Tono negro-gris oscuro usando como color principal de la interfaz. */
+    color: #1d1d1f;
+
+/* Elemento: Tamaño de fuente del subtítulo (h2) */
+/* Comentario Técnico: Define el tamaño del texto para los encabezados de segundo nivel dentro del bloque textual. */
+/* Función Técnica: Establece jerarquía visual respecto al h1 (más pequeño que el título principal pero claramente destacado). */
+/* Diccionario: 
+    font-size | Propiedad CSS | Controla el tamaño del texto.
+    rem       | Unidad relativa | Escala basada en el tamaño de fuente raíz.
+    1.8rem    | Valor | Tamaño intermedio adecuado para subtítulos. */
+font-size: 1.8rem;
+
+    /* Elemento: Margen inferior del subtítulo */
+    /* Comentario Técnico: Agrega espacio debajo del encabezado h2 dentro del bloque de texto. */
+    /* Función Técnica: Separa el subtítulo del párrafo siguiente, mejorando la lectura y la jerarquía visual. */
+    /* Diccionario: 
+        margin-bottom | Propiedad CSS | Define el espacio externo inferior del elemento.
+        rem           | Unidad relativa | Basada en el tamaño de fuente raíz del documento.
+        1rem          | Valor | Separación moderada entre título y contenido. */
+    margin-bottom: 1rem;
+
+/* Elemento: Cierre del bloque de reglas CSS */
+/* Comentario Técnico: Finaliza la definición de estilos aplicados al selector .bloque-texto h2. */
+/* Función Técnica: Indica que las propiedades del subtítulo han terminado, evitando que afecten otros selectores. */
+/* Diccionario: } | Llave de cierre | Marca el final del conjunto de reglas CSS asociado al selector. */
+}
+
+/* Elemento: Selector descendente de párrafos dentro de la sección institucional */
+/* Comentario Técnico: Selecciona todos los párrafos <p> ubicados dentro de .seccion-institucional */
+/* Función Técnica: Permite controlar la legibilidad del contenido textual general sin afectar otros párrafos del sitio web. */
+/* Diccionario: 
+    .seccion-institucional p | Selector descendente | Aplica estilos a los párrafos dentro de la sección.
+    {                        | Llave de apertura | Inicia el bloque de reglas CSS. */
+.seccion-institucional p {
+
+    /* Elemento: Altura de línea del texto */
+    /* Comentario Técnico: Define el espacio vertical entre cada línea del párrafo. */
+    /* Función Técnica: Mejora la legibilidad del texto largo evitando que las líneas queden muy juntas. */
+    /* Diccionario: 
+        line-height | Propiedad CSS | Controla la sepaación vertical entre líneas de texto.
+        1.6         | Valor relativo | 1.6 veces el tamaño de la fuente, considerando óptimo para lectura en pantalla. */
+    line-height: 1.6;       /* Espaciado para lectura cómoda */
+
+    /* Elemento: Margen inferior del párrafo */
+    /* Comentario Técnico: Agrega espacio debajo de cada párrafo dentro de la sección institucional. */
+    /* Función Técnica: Separa los párrafos entre sí para evitar bloques de texto compactos y mejorar la lectura. */
+    /* Diccionario:  
+        margin-bottom | Propiedad CSS | Define el espacio externo inferior del elemento.
+        rem           | Unidad relativa | Basada en el tamaño de fuente raíz del documento.
+        1rem          | Valor | Separación estándar entre párrafos. */
+    margin-bottom: 1rem;
+
+    /* Elemento: Tamaño de fuente del párrafo */
+    /* Comentario Técnico: Ajusta ligeramente el tamaño del texto de los párrafos dentro de la sección institucional. */
+    /* Función Técnica: Optimiza la lectura aumentando un poco el tamaño respecto al valor base del navegador sin romper la jerarquía tipográfica. */
+    /* Diccionario: 
+        font-size | Porpiedad CSS | Define el tamaño del texto.
+        rem       | Unidad relativa | Depende del tamaño de fuente raíz del documento.
+        1.05rem   | Valor | Incremento leve para mejorar legibilidad en pantallas. */
+    font-size: 1.05rem;
+
+/* Elemento: Cierre del bloque de reglas CSS */
+/* Comentario Técnico: Finaliza la definición de estilos aplicados al selector .seccion-institucional p. */
+/* Función Técnica: Indica que las propiedades de los párrafos han terminado, evitando que afecten otros elementos. */
+/* Diccionario: } | Llave de cierre | Marca el final del conjunto de reglas CSS asociado al selector. */
+}
+
+/* 4. Listas (Problemática y Valores) */
+
+/* Elemento: Selectores múltiples de listas dentro de la sección institucional */
+/* Comentario Técnico: Selecciona tanto listas no ordenadas (ul) como listas ordenadas (ol) ubicadas dentro de . seccion-institucional. */
+/* Función Técnica: Permite aplicar os mismos estilos a ambos tipos de listas sin duplicar reglas CSS. */
+/* Diccionario: 
+    ,  | Separador de selectores | Permite aplicar una misma regla a varios elementos.
+    ul | Lista no ordenada | Elemento HTML con viñetas.
+    ol | Lista ordenada | Elemento HTML numerado.
+    {  | Llave de apertura | Inicia el bloque de reglas CSS. */
+.seccion-institucional ul,
+.seccion-institucional ol {
+
+    /* Elemento: Margen izquierdo de las listas */
+    /* Comentario Técnico: Desplaza las listas hacia la derecha respecto al texto principal. */
+    /* Función Técnica: Genera sangría visual para diferenciar claramente los ítems de lista del contenido normal. */
+    /* Diccionario:  
+        margin-left | Propiedad CSS | Define el espacio externo e el lado izquierdo del elemento.
+        20px        | Valor en píxeles | Sangría estándar para listas legibles. */
+    margin-left: 20px;
+
+    /* Elemento: Margen inferior de las listas */
+    /* Comentario Técnico: Agrega espacio debajo de las listas dentro de la sección institucional. */
+    /* Función Técnica: Separa visualmente la lista del contenido siguiente para mantener claridad estructural. */
+    /* Diccionario:  
+        margin-bottom | Propiedad CSS | Define el espacio externo inferior del elemento.
+        rem           | Unidad relativa | Basada en el tamaño de fuent raíz del documento.
+        1.5rem        | Valor | Separación media entre bloques de contenido. */
+    margin-bottom: 1.5rem;
+
+/* Elemento: Cierre del bloque de reglas CSS */
+/* Comentario Técnico: Finaliza la definición de estilos aplicados a los selectores .seccion-institucional ul y seccion-institucional ol. */
+/* Función Técnica: Indica el fin del conjunto de propiedades para las listas dentro de la sección institucional. */
+/* Diccionario: } | Llave de cierre | Marca el final del bloque de reglas CSS asociado a los selectores. */
+}
+
+/* Elemento: Ítem de lista dentro de la sección institucional */
+/* Comentario Técnico: Seleccionar todos los elementos <li> que estén dentro del contenedor con clase .seccion-institucional. */
+/* Función Técnica: Permite aplicar estilos específicos solo a las listas de la sección intitucional, evitando afectar otras listas del sitio. */
+/* Diccionario:  
+    .seccion-institucional | Clase CSS | Contenedor de la sección institucional.
+    li                     | Selector de elemento | Aplica los estilos a cada ítem de lista dentro del contenedor. */
+.seccion-institucional li {
+
+    /* Elemento: Margen inferior de los ítems de lista dentro de la sección institucional */
+    /* Comentario Técnico: Agrega un pqueño espacio debajo de cada ítem de la lista para que no queden pegados entre sí. */
+    /* Función Técnica: Mejora la legibilidad y la separación visual entre los elementos de la lista, manteniendo orden y claridad. */
+    /* Diccionario: 
+        margin-bottom | Propiedad CSS | Define el espacio externo inferior del elemento.
+        rem           | Unidad relativa | Basada en el tamaño de fuente raíz del documento.
+        0.5rem        | Valor | Espacio aplicado debajo de cada ítem de lista. */
+    margin-bottom: 0.5rem;
+
+    /* Elemento: Altura de línea de los ítems de lista dentro de la sección institucional */
+    /* Comentario Técnico: Ajusta la altura de línea del texto en cada ítem de lista para que el contenido sea más legible y espaciado uniformemente. */
+    /* Función Técnica: Mantiene coherencia tipográfica y evita que el texto se vea amontonado, mejorando la lectura de la línea. */
+    /* Diccionario: 
+        line-height | Propiedad CSS | Controla la altura de cada línea de texto dentro del elemento.
+        1.5         | Valor numérico | Multiplica el tamaño de fuente por 1.5 para establecer la altura de la línea. */
+    line-height: 1.5;
+
+/* Elemento: Cierre del bloque de estilos para los ítems de la lista dentro de la sección institucional */
+/* Comentario Técnico: Indica el fin del conjunto de reglas CSS aplicadas a .seccion-institucional li. */
+/* Función Técnica: Mantiene la estructura del código clara y delimitada, facilitando su lectura y mantenimiento. */
+/* Diccionario: } | Símbolo de cierre | Marca el final de un bloque de reglas CSS. */
+}
+
+/* Estilo para resaltar las negritas en los valores */
+
+/* Elemento: Texto en negrita dentro de la sección de valores */
+/* Comentario Técnico: Selecciona todos los elementos <strong> que estén dentro de cualquier contenedor con clase .valores. */
+/* Función Técnica: Permite aplicar estilos específicos al texto destacado dentro de la sección de valores, sin afectar otros <strong> fuera de esta sección. */
+/* Diccionario: 
+    .valores | Clase CSS | Contenedor de la sección de valores.
+    strong   | Selector de elemento | Aplica los estilos al texto marcado como fuerte (negrita) dentro del contenedor. */
+.valores strong {
+
+    /* Elemento: Color del texto en negrita dentro de la sección de valores */
+    /* Comentario Técnico: Aplica un color específico (1d1d1f) al texto destacado. */
+    /* Función Técnica: MAntiene coherencia visual con la paleta de la sección y asegura buena legibilidad del texto fuerte. */
+    /* Diccionario: 
+        color | Propiedad CSS | Define el color del texto.
+        #1d1d1f | Valor hexadecimal | Color gris oscuro casi negro aplicado al texto. */
+    color: #1d1d1f;
+
+    /* Elemento: Grosor de la fuente en negrita dentro de la sección de valores */
+    /* Comentario Técnico: Define el peso de la fuente como 700, equivalente a negrita. */
+    /* Función Técnica: Resalta el texto fuerte para que tenga mayor énfasis visual dentro de la sección. */
+    /* Diccionario: 
+        font-weight | Propiedad CSS | Controla el grosor o intensidad de la fuente. 
+        700         | Valor numérico | Equivale a negrita (bold) en la tipografía utilizada. */
+    font-weight: 700;
+
+/* Elemento: Cierre del bloque de estilos para los elementos strong dentro de .valores */
+/* Comentario Técnico: Marca el final del conjunto de reglas CSS aplicadas a .valores strong. */
+/* Función Técnica: Delimita claramente el bloque de reglas, facilitando lectura y mantenimiento del código. */
+/* Diccionario: } | Símbolo de cierre | Indica el fin de un bloque de reglas CSS. */
+}
+
+
+/* 5. DISEÑO FLEXBOX: Misión y Visión (Lado a lado) */
+
+/* Elemento: Contenedor de misión y visión */
+/* Comentario Técnico: Selecciona el contenedor con clase .mision-vision donde se colocan los boques de misión y visión. */
+/* Función Técnica: Permite aplicar estilos específicos a esta sección sin afectar otros contenedores. */
+/* Diccionario: 
+    .mision-vision | Clase CSS | Contenedor principal de las secciones de misión y visión. */
+.mision-vision {
+
+    /* Elemento: Modo de visualización flexible */
+    /* Comentario Técnico: Aplica display:flex para alinear horizontalmente los elementos hijos del contenedor. */
+    /* Función Técnica: Permite distribuir los bloques de misión y visión en fila y manejar su alineación de forma flexible. */
+    /* Diccionario: 
+        display | Propiedad CSS | Define cómo se comporta el contenedor en términos de caja y alineación de sus hijos.
+        flex    | Valor | Activa el modelo de caja flexible, permitiendo distribución en fila o columna y alineación dinámica. */
+    display: flex;
+
+    /* Elemento: Separación entre columnas de misión y visión */
+    /* Comentario Técnico: Define un espacio de 30px entre los elementos hijos del contenedor flex. */
+    /* Función Técnica: Evita que los bloques de misión y visión queden pegados, mejorando la claridad visual. */
+    /* Diccionario: 
+        gap  | Propiedad CSS | Define el espacio entre los elementos hijos de un contenedor flex o grid.
+        30px | Valor | Espacio de 30 píxeles aplicado entre columnas. */
+    gap: 30px;
+
+    /* Elemento: Margen inferior del contenedor de misión y visión */
+    /* Comentario Técnico: Agrega un espacio de 3rem debajo del contenedor para separar la sección del contenido siguiente. */
+    /* Función Técnica: Mejora la jerarquía visual y la separación de secciones en la página. */
+    /* Diccionario: 
+        margin-bottom | Propiedad CSS | Define el espacio externo inferior del elemento.
+        rem           | Unidad relativa | Basada en el tamaño de fuente raíz del documento.
+        3rem          | Valor | Separación amplia para mantener claridad entre secciones. */
+    margin-bottom: 3rem;
+
+/* Elemento: Cierre del bloque de estilos para el contenedor de misión y visión */
+/* Comentario Técnico: Marca el fin del conjunto de reglas CSS aplicadas a .mision-vision. */
+/* Función Técnica: Mantiene la estructura del código clara y delimitada, facilitando lectura y mantenimiento. */
+/* Diccionario: } | Símbolo de cierre | Marca el final de un bloque de reglas CSS. */
+}
+
+/* Elemento: ítem individual dentro de la sección misión y visión */
+/* Comentario Técnico: Selecciona cada contenedor hijo de la sección misión-visión que representa un bloque de contenido (misión o visión). */
+/* Función Técnica: Permite aplicar estilos específicos a cada bloque sin afectar otros elementos de la página. */
+/* Diccionario: .item-mv | Clase CSS | Contenedor individual de misión o visión dentro de mision-vision. */
+.item-mv {
+
+    /* Elemento: Flexibilidad del ítem dentro del contenedor flex */
+    /* Comentario Técnico: Permite que cada bloque ocupe proporcionalmente el espacio disponible dentro del contenedor flex. */
+    /* Función Técnica: Hace que los bloques de misión y visión se distribuyan uniformemente y se adapten al tamaño del contenedor padre. */
+    /* Diccionario: 
+        flex | Propiedad CSS | Controla cómo se distribuye y escala un elemento dentro de un contenedor flexible.
+        1    | Valor numérico | El elemento crece y ocupa proporcionalmente el espacio disponible. */
+    flex: 1;                /* Ambas cajas ocupan el mismo ancho */
+
+    /* Elemento: Color de fondo del ítem */
+    /* Comentario Técnico: Aplica un fondo gris claro (#f9f9f9) al bloque de contenido. */
+    /* Función Técnica: Destaca visualmente cada ítem y separa el contenido del fondo de la página, mejorando legibilidad. */
+    /* Diccionario: 
+        background-color | Propiedad CSS | Define el color de fondo del elemento.
+        #f9f9f9          | Valor headecimal | Gris muy claro aplicado como fondo. */
+    background-color: #f9f9f9;  /* Fondo gris muy claro */
+
+    /* Elemento: Espaciado interno del ítem */
+    /* Comentario Técnico: Aplica padding de 25px dentro del bloque para separar el contenido de los bordes. */
+    /* Función Técnica: Mejora la legibilidad y evita que el contenido quede pegado a los bordes del contenedor. */
+    /* Diccionario: 
+        padding | Propiedad CSS | Espacio interno entre el borde del elemento y su contenido.
+        25px    | Valor | Espacio uniforme de 25 píxeles en todos los lados. */
+    padding: 25px;
+
+    /* Elemento: Bordes redondeados del ítem */
+    /* Comentario Técnico: Aplica un radio de borde de 8px para suavizar las esquinas del bloque. */
+    /* Función Técnica: Mejora la estética visual y armoniza con un diseño moderno y amigable. */
+    /* Diccionario: 
+        border-radius | Propiedad CSS | Redondea las esquinas del elemento.
+        8px           | Valor | Radio de 8 píxeles para esquinas suavizadas. */
+    border-radius: 8px;
+
+    /* Elemento: Borde lateral izquierdo del ítem */
+    /* Comentario Técnico: Añade una línea sólida de 4px en el lado iaquierdo con color #1d1d1f. */
+    /* Función Técnica: Refuerza visualmente la jerarquía del bloque y proporciona un detalle estético distintivo. */
+    /* Diccionario: 
+        border-left | Propiedad CSS | Define un borde solo en el lado izquierdo del elemento.
+        4px solid #1d1e1f | Valor | Borde sólido de 4 píxeles color gris oscuro. */
+    border-left: 4px solid #1d1d1f;
+    
+    /* Elemento: Sombra del bloque de ítem */
+    /* Comentario Técnico: Aplica una sombra ligera (0 2px 5px rgba (0,0,0,0.05)) para dar profundidad al contenedor. */
+    /* Función Técnica: Crea un efecto visual de elevación, destacando el bloque frente al fondo y mejorando la percepción de separación. */
+    /* Diccionario: 
+        box-shadow | Propiedad CSS | Aplica sombra alrededor del elemento para generar profundidad.
+        0 2px 5px rgba(0,0,0,0.05) | Valor | Sombra vertical de 2px, dessenfoque de 5px, color negro con 5% de opcacidad. */
+    box-shadow: 0 2px 5px rgba (0,0,0,0.05);
+    
+/* Elemento: Cierre del bloque de estilos para los ítems de misión y visión */
+/* Comentario Técnico: Marca el final del conjunto de reglas CSS aplicadas a .item-mv. */
+/* Función Técnica: Mantiene la estructura del código clara y delimitada, facilitando lectura y mantenimiento. */
+/* Diccionario: } | Símbolo de cierre | Indica el fin de un bloque de reglas CSS. */
+}
+
+/* Elemento: Títulos (h3) dentro de lo ítems de misión y visión */
+/* Comentario Técnico: Selecciona todos los elementos <h3> que estén dentro de cada .item-mv. */
+/* Función Técnica: Permite aplicar estilos específicos solo alos encabezados de los bloques de misión y visión sin afectar otros <h3> de la página. */
+/* Diccionario: 
+    .item-mv | Clase CSS | Contenedor individual de misión y visión.
+    h3       | Selector de elemento | Aplica los estilos a los  títulos de nivel 3 dentro del contenedor. */
+.item-mv h3 {
+
+    /* Elemento: Coor del texto de los títulos h3 dentro de los ítems */
+    /* Comentario Técnico: Aplica el color #1d1d1f al texto del encabezado. */
+    /* Función Técnica: Mantiene coherencia visual con la sección y asegura buena legibilidad de los títulos. */
+    /* Diccionario: 
+        color | Propiedad CSS | Define el color del texto.
+        #1d1d1f | Valor hexadecimal | Gris oscuro casi negro aplicado al encabezado. */
+    color: #1d1d1f;
+
+    /* Elemento: Margen inferior del título h3 */
+    /* Comentario Técnico: Agrega un espacio de 10px debajo del encabezado para separar el título del contenido siguiente. */
+    /* Función Técnica: Mejora la jerarquía visual y evita que el texto o elementos adyacentes queden demasiado pegados al título. */
+    /* Diccionario: 
+        margin-bottom | Propiedad CSS | Define el espacio externo inferior del elemento.
+        10px          | Valor | Espacio de 10 píxeles aplicado debajo del título. */
+    margin-bottom: 10px;
+
+    /* Elemento: Tamaño de fuente de los títulos h3 dentro de los ítems */
+    /* Comentario Técnico: Define el tamaño de fuente de los encabezados como 1.4 rem. */
+    /* Función Técnica: Asegura que los títulos sean legibles y proporcionados respecto al resto del contenido. */
+    /* Diccionario: 
+        font-size | Propiedad CSS | Controla el tamaño de la fuente del texto.
+        1.4rem    | Valor | Tamaño de fuente relativo a la raíz del documento, equivalente a 1.4 veces eltamaño base. */
+    font-size: 1.4rem;
+
+/* Elemento: Cierre del bloque de estilos para los títulos h3 dentro de .item-mv */
+/* Comentario Técnico: Marca el fin del conjunto de reglas CSS aplicadas a .item-mv h3. */
+/* Función Técnica: Mantiene la estructura clara y delimitada del código, facilitando su lectura y mantenimiento. */
+/* Diccionario: } | Símbolo de cierre | Indica el fin de un bloque de reglas CSS. */
+}
+
+/* 6. Adaptación Móvil (Responsive) */
+
+/* Elemento: Media query para pantallas con ancho máximo de 768px */
+/* Comentario Técnico: Aplica estilos específicos cuando la ventana o dispositivo tiene un ancho igual o menor a 768 píxeles. */
+/* Función Técnica: Permite adaptar la apariencia de la sección institucional a dispositivos móviles y tabletas, mejorando la responsividad. */
+/* Diccionario: 
+    @media (max-width: 768px) | Regla CSS | Define el bloque de estilos que solo se aplica bajo la condición de ancho máximo de 768px.
+    max-width                 | Condición | El estilo se activa si el ancho del viewport es menor o igual a este valor. 
+    768px                     | Valor | Ancho máximo del viewport para activar la regla. */
+@media (max-width: 768px) {
+
+    /* Elemento: Título h1 dentro de la sección institucional en pantallas pequeñas */
+    /* Comentario Técnico: Ajusta el tamaño de fuente de h1 para que se vea proporcionado en dispositivos móviles. */
+    /* Función Técnica: Mejora la legibilidad y evita que los títulos sean demasiado grandes en pantallas pequeñas. */
+    /* Diccionario: 
+        .seccion-institucional | Clase CSS | Contenedor principal de la sección institucional.
+        h1                     | Selector de elemento | Aplica el estilo solo al encabezado de nivel 1 dentro del contenedor. */
+    .seccion-institucional h1{
+
+    /* Elemento: Tamaño de fuente de título h1 en dispositivos móviles */
+    /* Comentario Técnico: Define la fuente como 2rem cuando el ancho de pantalla es <= 768px. */
+    /* Función Técnica: Ajusta ña jerarquía visual del título para pantallas pequeñas, manteniendo proporción y legibilidad. */
+    /* Diccionario: 
+        font-size | Propiedad CSS | Controla el tamaño de la feunte del texto.
+        2rem      | Valor | Tamaño relativo a la raíz del documento, equivalente a 2 veces el tamaño base. */
+    font-size: 2rem;
+
+/* Elemento: Cierre del bloque de estilos para h1 dentro de la media query */
+/* Comentario Técnico: Marca el fin de las reglas aplicadas al h1 en pantallas <= 768px. */
+/* Función Técnica: Mantiene la claridad y delimitación de los estilos responsivos dentro del bloque de media query. */
+/* Diccionario: } | Símbolo de cierre | Indica el fin de un bloque de reglas CSS. */
+}
+
+/* En celular, Misión y Visión se apilan una sobre otra  */
+
+/* Elemento: Contenedor de misión y visión en dispositivos pequeños */
+/* Comentario Técnico: Aplica estilos específicos a .mision-vision cuando se requiere ajustar el diseño para pantallas reducidas. */
+/* Función Técnica: Permite que los bloques de misión y visión se adapten a dispositivos móviles, cambiando la distribución de horizontal a vertical. */
+/* Diccionario: .mision-vision | Clase CSS | Contenedor principal de las secciones de misión y visión. */
+.mision-vision {
+
+    /* Elemento: Dirección del flujo de los elementos hijos */
+    /* Comentario Técnico: Cambia la dirección del contenedor flex de fila (horizontal) a columna (vertical). */
+    /* Función Técnica: Permite que los bloques de misión y visión se apilen verticalmente en pantallas pequeñas para mejorar la legibilidad y adaptación. */
+    /* Diccionario: 
+        flex-direction | Propiedad CSS | Define la dirección principal de los elementos dentro de un contenedor flex.
+        column         | Valor | Los elementos hijos se apilan verticalmente en columna. */
+    flex-direction: column;
+
+    /* Elemento: Dirección del flujo de los elementos hijos */
+    /* Comentario Técnico: Cambia la dirección del contenedor flex de fila (horizontal) a columna (vertical). */
+    /* Función Técnica: Permite que los bloques de mmisión y visión se apilen verticalmente en pantallas pequeñas para mejorar la legibilidad y adaptación. */
+    /* Diccionario: 
+        flex-direction | Propiedad CSS | Define la dirección principal de los elementos dentro de un contenedor flex.
+        cloumn         | Valor | Los elementos hijos se apilan verticalmente en columna. */
+    gap: 20px;
+
+/* Elemento: Cierre del bloque de estilos para .mision-vision en dispositivos pequeños */
+/* Comentario Técnico: Marca el fin del conjunto de reglas aplicadas a .mision-vision en este contexto responsivo. */
+/* Función Técnica: Mantiene la estructura del código clara y delimitada, facilitando su lectura y mantenimiento. */
+/* Diccionario: } | Símbolo de cierre | Indica el fin de un bloque de reglas CSS. */
+}
+
+/* Elemento: Ítem individual de misión y visión en pantallas pequeñas */
+/* Comentario Técnico: Selecciona cada bloque .item-mv para modificar sus bordes en dispositivos móviles o contextos responsivos. */
+/* Función Técnica: Permite adaptar la apariencia del bloque al diseño vertical, eliminando el borde lateral y agregando un borde superior para mantener jerarquía visual. */
+/* Diccionario: .item-mv | Clase CSS | Contenedor individual de misión o visión dentro de .mision-vision */
+.item-mv {
+
+    /* Elemento: Eliminación del borde lateral izquierdo */
+    /* Comentario Técnico: Quita el borde de 4px que estaba en el lado izquierdo del bloque. */
+    /* Función Técnica: Evita que el borde lateral interfiera con la nueva disposición vertical en dispositivos móviles. */
+    /* Diccionario: 
+        border-left | Propiedad CSS | Define el borde del lado izquierdo del elemento.
+        none        | Valor | Elimina cualquier borde aplicado en el lado izquierdo. */
+    border-left: none;          /* Quitamos borde lateral */
+
+    /* Elemento: Borde superior del ítem en pantallas pequeñas */
+    /* Comentario Técnico: Aplica un borde sólido de 4px en la parte superior del bloque con color #1d1d1f. */
+    /* Función Técnica: Mantiene un detalle visual que indica jerarquía y separación entre los bloques cuando se apilan en columna. */
+    /* Diccionario: 
+        border-top | Propiedad CSS | Define un borde solo en la parte superior del elemento.
+        4px solid #1d1d1f | Valor | Borde sólido de 4 píxeles color gris oscuro aplicado en la parte superior. */
+    border-top: 4px solid #1d1d1f;  /* Ponemos borde superior */
+
+    /* Elemento: Cierre del bloque de estilos para .item-mv en dispositivos móviles */
+    /* Comentario Técnico: Marca el final del conjunto de reglas aplicadas a .item-mv en este contexto responsivo. */
+    /* Función Técnica: Mantiene la estructura clara y facilita la lectura y manteniendo el código. */
+    /* Diccionario: } | Símbolo de cierre | Indica e fin de un bloque de reglas CSS. */
+    }
+
+/* Elemento: Cierre del bloque de media query */
+/* Comentario Técnico: Indica el fin de las reglas CSS aplicadas bajo la condción responsiva definida previamente. */
+/* Función Técnica: Delimita el alcance de los estilos responsivos, evitando que afecten el diseño fuera del contexto de pantalla especificado. */
+/* Diccionario: } | Símbolo de cierre | Marca el final de un bloque de reglas CSS o media query. */
+}

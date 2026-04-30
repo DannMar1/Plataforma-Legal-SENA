@@ -11,17 +11,36 @@
 <!-- Comentario técnico: Define el texto que aparecerá en la pestaña del navegador para esta pagina. -->
 <!-- Función tecnica: Reemplaza el espacio reservado en la plantilla base con el titulo especifico de esta vista. -->
 <!-- Diccionario:
-    block: Sección editable dentro de una plantilla heredadá. Permite insrtar contenido propio.
-    titulo_pestana: Nombre del bloque destinado al <title> del HTML. Controla lo que se ve en la pestaña del navegador.
-    endblock: Indica el final del contenido del bloque: Obligatorio para cerrar la acción. -->
+    block           | Sección editable dentro de una plantilla heredadá. Permite insrtar contenido propio.
+    titulo_pestana  | Nombre del bloque destinado al <title> del HTML. Controla lo que se ve en la pestaña del navegador.
+    endblock        | Indica el final del contenido del bloque: Obligatorio para cerrar la acción. -->
 {% block titulo_pestana %} ¿Quienes somos? {% endblock %}
 
 <!-- Elemento: Bloque de contenido principal de Jinja2. -->
 <!-- Comentario técnico: Define la sección donde se insertará el contenido especifico de esta pagina dentro de la pantilla base. -->
 <!-- Función tecnica: Reemplaza el bloque llamado "contenido" que esta declarado en base.html permitiendo quye cada vista tenga información diferente sin repetir la estructura general. -->
 <!-- Diccionario:
-    block: Estructura de Jinja2 que define una sección editable. Permite sobrescribir contenido en plantillas heredadas.
-    contenido: Nombre del bloque principal del cuerpo de la pagina. Normalmente contiene todo el HTML visible.endoblock. Cierre obligatorio del bloque. Indica donde termina la sección personalizada. -->
+    block       | Estructura de Jinja2 que define una sección editable. Permite sobrescribir contenido en plantillas heredadas.
+    contenido   | Nombre del bloque principal del cuerpo de la pagina. Normalmente contiene todo el HTML visible.endoblock. Cierre obligatorio del bloque. Indica donde termina la sección personalizada. -->
+    
+<!-- Elemento: Bloque Jinja2 para estilos adicionales específicos de la vista. -->
+<!-- Comentario Técnico: Permite inyectar hojas de estilo particulares dentro del <head> de la plantilla base sin modificar su estructura general. -->
+<!-- Función Técnica : 
+    1) { % block estilos_adicionales %} abre un espacio personalizable definido en base.html.
+    2) <link> conecta el archivo CSS específico de esta vista.
+    3) url ('static',...) genera la ruta correcta del archivo dentro del directorio /static.
+    4) { % endblock %} cierra el bloque para que Jinja2 procese correctamente la herencia. -->
+<!-- Diccionario:
+    block estilos_adcionales | Bloque heredable | Permite agregar CSS adicional por vista.
+    link                     | Etiqueta HTML    | Vincula una hoja de estilos externa.
+    rel="stylesheet"         | Relación del recurso | Indica que el archivo es una hoja de estilo CSS.
+    url_for                  | Función de Flask | Genera rutas dinámicas seguras.
+    static                   | Carpeta pública | Directorio para archivos estáticos.
+    nosotros.css             | Archivo CSS específico | Contiene los estilos exclusivos de la vista "nosotros". -->
+{% block estilos_adicionales %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nosotros.css') }}">
+{% endblock %}
+
 {% block contenido %}
 
     <!-- Elemento: Sección HTML de tipo institucional. -->
@@ -92,7 +111,7 @@
         </article>
 
         <!-- Elemento: Nuevo bloque semantico de contenido institucional. -->
-        <!-- Coemntario técnico: Inicia un segundo articulo dentro de la sección, permitiendo organizar la información en unidades tematicas independientes. -->
+        <!-- Comentario técnico: Inicia un segundo articulo dentro de la sección, permitiendo organizar la información en unidades tematicas independientes. -->
         <!-- Función técnica: Divide el contennido en secciones claras (por ejemplo: mision, vision, objetivos), mejorando la estructura, el orden visual y la comprension del usuario.-->
         <!-- Diccionario: 
             article      | Etiqueta semantica HTML5: Representa contenido independiente o informativo dentro de la pagina. 
@@ -115,7 +134,7 @@
             <p>Los formatos que encuentran en internet suelen ser:</p>
 
             <!-- Elemento: Lista descriptiva dek problemas comunes. -->
-            <!-- Coemntario técnico: Representa una enumeración de fallas detectadas en los formatos juridicos disponibles en intenet. Cada <li> corresponde a un defecto en especifico. -->
+            <!-- Comentario técnico: Representa una enumeración de fallas detectadas en los formatos juridicos disponibles en intenet. Cada <li> corresponde a un defecto en especifico. -->
             <!-- Función técnica: 
                 La etiqueta <ul> agrupa elementos relacionados sin orden de prioridad, 
                 mientras que cada <li> permite presentar la informacion de forma clara, 
@@ -151,14 +170,14 @@
         </article>
 
         <!-- Elemento: Sección semantica de mision y vision con un bloque de mision. -->
-        <!-- Coemntario técnico: Agrupa de manera estructurada la mision de la organización dentro de un contenedor especifico para estilos y jerarquia semantica. -->
+        <!-- Comentario técnico: Agrupa de manera estructurada la mision de la organización dentro de un contenedor especifico para estilos y jerarquia semantica. -->
         <!-- Función técnica: Permite diferenciar visual y estructuralmente kos objetivos de la organización, facilitando su comprensión y aplicación de CSS. -->
         <!-- Diccionario: 
             secction: Etiqueta semantica HTML5: Agrupa contenido tematico de la pagina. 
             class="mision-vision" Clase CSS: Identifica toda la sección de objetivos institucionales.
             div: Contenedor generico: Agrupa el bloque inividual de misión. 
             class="item-mv": Clase css permite aplicar estilos especificos a cada item (mision y vision)
-            h3: Encabezadp de tercer nivel: Titulo de la subsección.
+            h3: Encabezado de tercer nivel: Titulo de la subsección.
             p: Párrafo descriptivo: Contenido que explica la misión. -->
         <section class="mision-vision">
             <div class="item-mv">
@@ -167,7 +186,7 @@
             </div>
 
             <!-- Elemento: Bloque dentro de la sección mision-vision.-->
-            <!-- Coemntario técnico: Agrupa y presenta la visión de la organización, seprado de la misión para mantener claridad semantica y visual. -->
+            <!-- Comentario técnico: Agrupa y presenta la visión de la organización, seprado de la misión para mantener claridad semantica y visual. -->
             <!-- Función técnica: Permite mostrar los objetivos futuros de la plataforma, contribuyendo a la identidad institucional y facilitando estilos CSS independientes. -->
             <!-- Diccionario: 
                 div: Conetendor generico: Agrupa el bloque individual de visión.
