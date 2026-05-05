@@ -198,7 +198,7 @@
                         - Legalis: titular de los derechos.
                         - "Todos los derechos reservados": declaración legal de protección del contenido.
                     -->
-                    <p>&copy; <strong>2026 Legalis. Todos los derechos reservados.</strong></p>
+                    <p>&copy; 2026 Legalis. Todos los derechos reservados.</p>
 
                 </div>
 
@@ -206,13 +206,21 @@
                 -->
                 <div class="enlaces-legales">
 
-                    <!-- Enlace a la Política de Privacidad de Legalis. Permite al usuario consultar el tratamiento de datos personales, derechos, deberes y condiciones de protección de información. Incluye aria-label para accesibilidad y mejor navegación con lectores de pantalla. El atributo href define la ruta interna del sistema.
-                    -->
-                    <a href="/politica-privacidad" aria-label="Ver política de privacidad de Legalis"><strong>Política de Privacidad</strong></a>
+                    <!-- Elemento: Enlace interno a Política dwe Privacidad -->
+                    <!-- Comentario Técnico: Hipervínculo dinámico generado mediantwe url_for en Flask para dirigir la vista 'privacidad'. -->
+                    <!-- Función Técnica: Permitir navegación interna segura y mantenible dentro de la aplicación. -->
+                    <!-- Rol Arquitectónico: Punto de acceso a documento legal desde menú, footer o sección informativa. -->
+                    <!-- Accesibilidad: aria-label mejora la experiencia para lectores de pantalla. -->
+                    <!-- Diccionario:
+                        <a>        | Anchor | Elemento HTML para enlaces.
+                        href       | Atributo | Define la URL de destino.
+                        url_for()  | Función Flask | Genera rutas dinámicamente según el nombre de la vista.
+                        aria-label | Atributo APA  | Describe el propósito del enlace para accesibilidad. -->
+                    <a href="{{ url_for('privacidad') }}" aria-label="Ver política de privacidad de Legalis">Política de Privacidad</a>
 
-                    <!-- Enlace a los Términos y Condiciones de Legalis. Define el marco contractual del uso de la plataforma. Incluye aria-label para accesibilidad y mejor navegación con lectores de pantalla. El atributo href señala la ruta interna del sistema.
+                    <!-- Enlace a los Términos y Condiciones de Legalis. Define el marco contractual del uso de la plataforma. Incluye aria-label para accesibilidad y mejor navegación con lectores de pantalla. El atributo href señala la ruta interna del sistema. 
                     -->
-                    <a href="terminos-condiciones" aria-label="Ver términos y condiciones de Legalis"><strong>Términos y Condiciones</strong></a>
+                    <a href="terminos-condiciones" aria-label="Ver términos y condiciones de Legalis">Términos y Condiciones</a>
 
                 <!-- Cierre del contenedor de enlaces legales del footer. Finaliza el bloque que agrupa los accesos a políticas y términos del sistema Legalis.-->
                 </div>
@@ -225,8 +233,7 @@
                     -->
                     <p>Atención al usuario (PQR): <strong>soporte@legalis.com</strong></p>
 
-                <!-- Cierre del contenedor de contacto y soporte del footer. Finaliza el bloque que presenta los canales oficiales de atención al usuario del sistema Legalis.
-                -->
+                <!-- Cierre del contenedor de contacto y soporte del footer. Finaliza el bloque que presenta los canales oficiales de atención al usuario del sistema Legalis. -->
                 </div>
 
             <!-- Cierre del contenedor principal del footer. Finaliza la agrupación de los módulos: copyright, enlaces legales y contacto-soporte del sistema Legalis. -->

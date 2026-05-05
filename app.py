@@ -6,7 +6,7 @@
 
 # Importa la clase Flask para crear la aplicación web y la función render_template para cargar y renderizar plantillas HTML con Jinja2.
 # Permite inicializar la app y mostrar vistas HTML dinámicas dentro de las rutas del proyecto.
-from flask import Flask, render_template # type: ignore
+from flask import Flask,render_template # type: ignore
 
 # Crea la instancia principal de la aplicación Flask, usando el nombre del módulo para ubicar recursos y plantillas correctamente.
 # Inicializa el servidor web y configura el contexto de la aplicación para manejar rutas, vistas y archivos estáticos.
@@ -31,9 +31,6 @@ def inicio():
     # Renderiza la plantilla index.html y la envía como respuesta al navegador para mostrar la página de inicio del sitio.
     # Carga el archivo HTML desde la carpeta templates, procesa sus bloques dinámicos con Jinja2 y devuelve la vista al cliente.
     return render_template('index.html')
-
-# Verifica si el archivo se está ejecutando directamente (no importado como módulo) para iniciar la aplicación.
-# Garantiza que el servidor Flask se ejecute únicamente cuando este archivo sea el programa principal, evitando que se inicie automáticamente si es importado desde otro módulo.
 
 # =====================================================
 # RUTA: PREGUNTAS FRECUENTES
@@ -78,6 +75,37 @@ def nosotros() :
     # Función Técnica: Genera la página web que verá el visitante al entrar a la sección Nosotros.
     # DICCIONARIO: render_template | Función de Flask que convierte un archivo HTML en respuesta web | Permite mostrar páginas dinámicas.
     return render_template('nosotros.html')
+
+# =====================================================
+# RUTA: POLÍTICA DE PRIVACIDAD (LEGAL)
+# =====================================================
+
+# Elemento: Decorador de ruta par ala política de privacidad
+# Comentario Técnico: Define la URL '/privacidad' que activará la función privacidad cuando un usuario acceda a esa dirección.
+# Función Técnica: Permite asociar una ruta específica del sitio web con una función controladora dentro de la aplicación Flask.
+# DICCIONARIO: 
+    # @app.route()  | Decorador Flask | Asocia una URL con una función.
+    # '/privacidad' | Ruta URL | Dirección a la que el usuario accede desde el navegador.
+@app.route('/privacidad')
+
+# Elemento: Función controladora de la vista de política de privacidad
+# Comentario Técnico: Define la función que se ejecuta cuando el usuario accede a la ruta indicada.
+# Función Técnica: Actúa como controlador en el patrón MVC (Modelo-Vista-Controlador), geestionando la solicitud y determinando qué respuesta devolver.
+# DICCIONARIO: 
+    # def        | Palabra reservada | Define una función en Python.
+    # privacidad | Nombre de función | Identificador interno de la vista.
+def privacidad():
+    
+    # Elemento: Renderización de plantillas HTML
+    # Comentario Técnico: Devuelve al navegador el archivo 'privacidad.html' ubicado en la carpeta templates.
+    # Función Técnica: Genera la respuesta HTTP mostrando una vista HTML al usuario.
+    # DICCIONARIO: 
+        # return            | Instrucción Python | Devuelve un valor
+        # render_template   | Función Flask | Renderiza un archivo HTML desde la carpeta templates.
+        # 'privacidad.html' | Plantilla HTML | Archivo que contiene el contenido de la página.
+    return render_template('privacidad.html')
+
+# ==============================================================
 
 # Elemento: Condicional de ejecución principal (Boilerplate).
 # Comentario Técnico: Evalúa la variable especial '__name__' para determinar si el script se está ejecutando como el programa principal o si está siendo importado como un módulo.
