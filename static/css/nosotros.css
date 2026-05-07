@@ -479,7 +479,7 @@ font-size: 1.8rem;
     /* Diccionario: 
         box-shadow | Propiedad CSS | Aplica sombra alrededor del elemento para generar profundidad.
         0 2px 5px rgba(0,0,0,0.05) | Valor | Sombra vertical de 2px, dessenfoque de 5px, color negro con 5% de opcacidad. */
-    box-shadow: 0 2px 5px rgba (0,0,0,0.05);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     
 /* Elemento: Cierre del bloque de estilos para los ítems de misión y visión */
 /* Comentario Técnico: Marca el final del conjunto de reglas CSS aplicadas a .item-mv. */

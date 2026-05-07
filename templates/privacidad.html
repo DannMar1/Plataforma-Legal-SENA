@@ -19,6 +19,22 @@
         title              | Elemento HTML | Nombre visible en la pestaña del navegador. -->
     {% block titulo_pestana %} Política de Privacidad {% endblock %}
 
+    <!-- Elemento: Bloque de estilos adicionales -->
+    <!-- Comentario Técnico: Permite inyectar hojas de estilo específicas en la plantilla base mediante herencia Jinja2. -->
+    <!-- Función Técnica: Cargar archivo CSS estático usando url_for para asegurar rutas dinámicas correctas en Flask. -->
+    <!-- Rol Arquitectónico: Extensión modular de estilos por vista sin alterar el layout principal. -->
+    <!-- Diccionario:
+        block               | Estructura Jinja2 | Área redefinible en plantillas hija.
+        estilos_adicionales | Identificador del bloque | Sección destinada a estilos especíicos.
+        <link>              | Elemento HTML | Vincula recursos externos como CSS.
+        rel="stylesheet"    | Relación | Indica que el recurso es una hoja de estilo.
+        url_for()           | Función Flask | Genera ruta segura hacia archivos estáticos.
+        static              | Carpeta Flask | Directorio para archivos públicos (CSS, JS, imágenes).
+        filename            | Parámetro | Especifica el archivo dentro de /static. -->
+    {% block estilos_adicionales %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/legal.css') }}">
+    {% endblock %}
+
     <!-- Elemento: Declaración de bloque de contenido -->
     <!-- Comentario Técnico: Define una sección reemplazable dentro de la plantilla heredada desde base.html. -->
     <!-- Función Técnica: Permite insertar contenido específico en el área designada por la plantilla padre, sin modificar su estructura global. -->
